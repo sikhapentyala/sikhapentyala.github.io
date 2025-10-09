@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TCSS 555 Weekly Evaluations</title>
+    <title>TCSS55 Evaluation</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
             min-height: 100vh;
             padding: 20px;
         }
@@ -25,7 +25,7 @@
 
         header {
             text-align: center;
-            color: white;
+            color: white !important;
             margin-bottom: 40px;
         }
 
@@ -33,11 +33,13 @@
             font-size: 2.5em;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            color: white !important;
         }
 
         .subtitle {
             font-size: 1.1em;
             opacity: 0.9;
+            color: white !important;
         }
 
         .week-grid {
@@ -49,7 +51,7 @@
         }
 
         .week-card {
-            background: white;
+            background: white !important;
             border-radius: 8px;
             padding: 12px 16px;
             text-align: center;
@@ -57,6 +59,7 @@
             transition: all 0.3s ease;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             min-width: 80px;
+            color: #333 !important;
         }
 
         .week-card:hover {
@@ -65,19 +68,26 @@
         }
 
         .week-card.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            color: white !important;
             font-weight: bold;
+        }
+
+        .week-card.active .week-number,
+        .week-card.active .week-label {
+            color: white !important;
         }
 
         .week-number {
             font-size: 1.2em;
             font-weight: bold;
+            color: #333;
         }
 
         .week-label {
             font-size: 0.75em;
             opacity: 0.7;
+            color: #333;
         }
 
         .content-viewer {
@@ -134,7 +144,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>🤖 TCSS 555 Evaluations</h1>
+            <h1>🤖 TCSS55 Evaluation</h1>
             <p class="subtitle">Select a week to view evaluation results</p>
         </header>
 
