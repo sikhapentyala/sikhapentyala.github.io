@@ -1,0 +1,143 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <style>
+            body {
+                font-family: 'Helvetica Neue', Arial, sans-serif;
+                margin: 0;
+                padding: 20px;
+                background-color: #f5f5f5;
+            }
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                background-color: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            }
+            .header {
+                background-color: #4b2e83;
+                color: white;
+                padding: 20px;
+                border-radius: 8px 8px 0 0;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            .uw-logo {
+                color: #b7a57a;
+                font-size: 1.2em;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+            .week-number {
+                color: #b7a57a;
+                font-size: 1.1em;
+                margin: 10px 0;
+            }
+            h2 {
+                margin: 0;
+                color: white;
+                font-size: 2em;
+            }
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                margin-top: 20px;
+                background-color: white;
+            }
+            th {
+                background-color: #4b2e83;
+                color: white;
+                padding: 12px;
+                text-align: center;
+                font-weight: bold;
+            }
+            td {
+                border: 1px solid #ddd;
+                padding: 12px;
+                text-align: center;
+            }
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            tr:hover {
+                background-color: #f5f5f5;
+            }
+            .baseline {
+                background-color: #b7a57a !important;
+                color: #4b2e83;
+                font-weight: bold;
+            }
+            .ensemble {
+                background-color: #85754d !important;
+                color: white;
+                font-weight: bold;
+            }
+            .error {
+                color: #dc3545;
+                font-weight: bold;
+            }
+            .footer {
+                text-align: center;
+                margin-top: 20px;
+                padding: 20px;
+                color: #666;
+                font-size: 0.9em;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <div class="uw-logo">UNIVERSITY OF WASHINGTON</div>
+                <h2>Team Results</h2>
+                <div class="week-number">Week 4</div>
+            </div>
+            <table>
+                <tr>
+                    <th>Team</th>
+                    <th>Age Accuracy</th>
+                    <th>Gender Accuracy</th>
+                    <th>OPN RMSE</th>
+                    <th>NEU RMSE</th>
+                    <th>EXT RMSE</th>
+                    <th>AGR RMSE</th>
+                    <th>CON RMSE</th>
+                </tr>
+                <tr class="baseline">
+                    <td>Baseline</td>
+                    <td id="agegroup">0.59</td>
+                    <td id="gender">0.59</td>
+                    <td id="open">0.65</td>
+                    <td id="neurotic">0.80</td>
+                    <td id="extrovert">0.79</td>
+                    <td id="agreeable">0.67</td>
+                    <td id="conscientious">0.73</td>
+                </tr>
+    
+               <tr class="ensemble"><td>Ensemble</td><td colspan="7" TBD </td></tr>
+                
+<tr><td>Team 1</td><td colspan="7" class="error">Error: python3: can't open file 'xxx/itadmin/model.py': [Errno 2] No such file or directory</td></tr>
+
+<tr><td>Team 2</td><td colspan="7" class="error">Error: FileNotFoundError: [Errno 2] No such file or directory: 'xxx/itadmin/relational_model.py (+Import Error from importlib)</td></tr>
+
+<tr><td>Team 3</td><td>0.590</td><td><strong>0.750</strong></td><td>0.650</td><td>0.800</td><td>0.790</td><td>0.670</td><td>0.730</td></tr>
+
+<tr><td>Team 4</td><td>0.590</td><td><strong>0.790</strong></td><td>0.650</td><td>0.800</td><td>0.790</td><td>0.670</td><td>0.730</td></tr>
+
+<tr><td>Team 5</td><td style="color: red;"> 0.390 </td><td>0.610</td><td><strong>0.670</strong></td><td><strong>0.850</strong></td><td><strong>0.820</strong></td><td><strong>0.700</strong></td><td><strong>0.770</strong></td></tr>
+<tr><td>Team 6</td><td>0.590</td><td>0.590</td><td>0.650</td><td>0.800</td><td>0.790</td><td>0.670</td><td>0.730</td></tr>
+
+<tr><td>Team 7</td><td style="color: red;"> 0.470</td><td>0.670</td><td>0.640</td><td>0.790</td><td>0.790</td><td>0.650</td><td>0.720</td></tr>
+<tr><td>Team 8</td><td colspan="7" class="error">Error: No .xml files were found in output data directory "xxx/output/555team8/data</td></tr>
+
+</table>
+            <div class="footer">
+                © University of Washington
+            </div>
+        </div>
+    </body>
+    </html>
+    
