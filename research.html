@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research — Sikha Pentyala</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">Sikha Pentyala</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="service.html">Service</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container page-content">
+
+  <!-- ── RESEARCH STATEMENT INTRO ───────────────────────── -->
+  <div class="section-block">
+    <h2 class="section-title"><i class="fa-solid fa-flask"></i> Research Overview</h2>
+    <div class="philosophy-box">
+      My research focuses on the overarching domain of <strong>Responsible and Trustworthy AI</strong>.
+      A central question guiding my work: <em>How can we design AI systems while safeguarding the
+      privacy of individuals?</em> I develop principled methods at the intersection of privacy,
+      synthetic data generation, fairness, and interpretability — with real-world applications in
+      healthcare, genomics, and finance. My work combines theoretical guarantees (differential
+      privacy, secure multiparty computation) with practical systems deployed on national infrastructure
+      such as the <strong>NAIRR</strong>.
+    </div>
+  </div>
+
+  <!-- ── THREE RESEARCH AREAS ───────────────────────────── -->
+  <div class="section-block">
+    <h2 class="section-title"><i class="fa-solid fa-sitemap"></i> Research Areas</h2>
+
+    <!-- AREA 1 -->
+    <div style="margin-bottom: 2.5rem;">
+      <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.8rem;">
+        <div style="width:4px; height:2rem; background:var(--accent); border-radius:2px; flex-shrink:0;"></div>
+        <h3 style="font-family:var(--serif); font-size:1.2rem; font-weight:600; color:var(--ink);">
+          1. Privacy-Preserving Synthetic Data Generation
+        </h3>
+      </div>
+      <p style="font-size:0.94rem; color:#333; max-width:720px; margin-bottom:0.9rem; line-height:1.75;">
+        Synthetic data generation (SDG) produces artificial replicas of real data that preserve statistical
+        properties without exposing private records — enabling open research in regulated domains.
+        My work addresses a critical gap: how to generate synthetic data from <em>distributed data silos</em>
+        that no single party is permitted to access in full. I combine <strong>Differential Privacy (DP)</strong>
+        and <strong>Secure Multiparty Computation (MPC)</strong> to build the first systems capable of
+        this. Current focus areas include privacy vulnerabilities in existing SDG methods, synthetic
+        genomic and single-cell RNA-seq data generation on the <strong>NAIRR</strong>, and extending
+        SDG to multi-modal and longitudinal data.
+      </p>
+      <div class="tags" style="margin-bottom:0.9rem;">
+        <span class="tag tag-blue">Differential Privacy</span>
+        <span class="tag tag-blue">Secure MPC</span>
+        <span class="tag tag-blue">Generative Models</span>
+        <span class="tag tag-green">Genomics</span>
+        <span class="tag tag-green">scRNA-seq</span>
+        <span class="tag tag-green">NAIRR</span>
+      </div>
+      <p style="font-size:0.84rem; color:var(--muted);">
+        <strong>Key papers:</strong> CaPS (ICML 2024), IEEE SaTML 2025, PPAI-2025, GenoPri'24, SyntheticData4ML@NeurIPS 2022
+      </p>
+    </div>
+
+    <!-- AREA 2 -->
+    <div style="margin-bottom: 2.5rem;">
+      <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.8rem;">
+        <div style="width:4px; height:2rem; background:var(--accent2); border-radius:2px; flex-shrink:0;"></div>
+        <h3 style="font-family:var(--serif); font-size:1.2rem; font-weight:600; color:var(--ink);">
+          2. Federated Learning &amp; Privacy-Preserving AI
+        </h3>
+      </div>
+      <p style="font-size:0.94rem; color:#333; max-width:720px; margin-bottom:0.9rem; line-height:1.75;">
+        Federated learning enables multiple parties to collaboratively train ML models without
+        sharing raw data. My work extends FL to handle sensitive settings where even intermediate
+        model updates must remain private. I develop MPC protocols for secure aggregation,
+        privacy-preserving inference (video classification, anomaly detection), and collaborative
+        training across vertical and horizontal data splits. Notable work includes the
+        <strong>U.S.-U.K. PETs Prize Challenge</strong> (2nd prize, financial crime detection),
+        the <strong>iDASH 2021</strong> genome analysis competition (1st place), and the
+        NIST Privacy-Preserving Federated Learning Blog Series.
+      </p>
+      <div class="tags" style="margin-bottom:0.9rem;">
+        <span class="tag tag-blue">Federated Learning</span>
+        <span class="tag tag-blue">MPC</span>
+        <span class="tag tag-blue">Differential Privacy</span>
+        <span class="tag tag-orange">Financial AI</span>
+        <span class="tag tag-green">Healthcare</span>
+      </div>
+      <p style="font-size:0.84rem; color:var(--muted);">
+        <strong>Key papers:</strong> ICML 2021, PoPETS 2024, PLOS ONE 2024, U.S.-U.K. PETs Prize Challenge, iDASH 2021
+      </p>
+    </div>
+
+    <!-- AREA 3 -->
+    <div style="margin-bottom: 2.5rem;">
+      <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.8rem;">
+        <div style="width:4px; height:2rem; background:var(--green); border-radius:2px; flex-shrink:0;"></div>
+        <h3 style="font-family:var(--serif); font-size:1.2rem; font-weight:600; color:var(--ink);">
+          3. Fairness &amp; Explainability in AI
+        </h3>
+      </div>
+      <p style="font-size:0.94rem; color:#333; max-width:720px; margin-bottom:0.9rem; line-height:1.75;">
+        Privacy cannot be addressed in isolation — AI systems must also be fair and explainable.
+        My work at the intersection of privacy and fairness includes: MPC protocols for bias auditing
+        (PrivFair), privacy-preserving group fairness in federated learning, and fair item ranking
+        under user privacy constraints. At JPMorgan Chase, I developed <strong>differentially private
+        algorithmic recourse</strong> — giving actionable feedback to individuals affected by automated
+        decisions while protecting the privacy of the training population (US Patent 18/517,211).
+        I also designed novel interpretable architectures for time-series models (pending patent).
+      </p>
+      <div class="tags" style="margin-bottom:0.9rem;">
+        <span class="tag tag-orange">Group Fairness</span>
+        <span class="tag tag-orange">Algorithmic Recourse</span>
+        <span class="tag tag-orange">Interpretability</span>
+        <span class="tag tag-blue">MPC</span>
+        <span class="tag tag-orange">Time Series</span>
+      </div>
+      <p style="font-size:0.84rem; color:var(--muted);">
+        <strong>Key papers:</strong> PMLR 2024 (PMLR, 16% acceptance), ECIR 2023, PPAI-2022, ICAIF-2023 (patent)
+      </p>
+    </div>
+  </div>
+
+  <!-- ── FULL PUBLICATIONS ───────────────────────────────── -->
+  <div class="section-block">
+    <h2 class="section-title"><i class="fa-solid fa-book-open"></i> Publications</h2>
+
+    <div class="pub-filter">
+      <button class="filter-btn active" onclick="filterPubs('all',this)">All</button>
+      <button class="filter-btn" onclick="filterPubs('synth',this)">Synthetic Data</button>
+      <button class="filter-btn" onclick="filterPubs('federated',this)">Federated / Privacy</button>
+      <button class="filter-btn" onclick="filterPubs('fairness',this)">Fairness / XAI</button>
+    </div>
+
+    <!-- CONFERENCE PAPERS -->
+    <div class="pub-section-label">Conference &amp; Journal Papers</div>
+    <div class="pub-list">
+
+      <div class="pub-card" data-tags="synth privacy">
+        <div class="pub-venue">ICML 2024 &nbsp;·&nbsp; 28% acceptance</div>
+        <div class="pub-title">CaPS: Collaborative and Private Synthetic Data Generation from Distributed Sources</div>
+        <div class="pub-authors"><strong>S. Pentyala</strong>, M. Pereira, M. De Cock</div>
+        <div class="pub-links">
+          <a class="pub-btn" href="https://proceedings.mlr.press/v235/pentyala24a.html" target="_blank">Paper</a>
+        </div>
+      </div>
+
+      <div class="pub-card" data-tags="synth privacy">
+        <div class="pub-venue">IEEE SaTML 2025 &nbsp;·&nbsp; 29% acceptance</div>
+        <div class="pub-title">Privacy Vulnerabilities in Marginals-based Synthetic Data</div>
+        <div class="pub-authors">S. Golob, <strong>S. Pentyala</strong>, A. Maratkhan, M. De Cock</div>
+        <div class="pub-links">
+          <a class="pub-btn" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10992388" target="_blank">Paper</a>
+        </div>
+      </div>
+
+      <div class="pub-card" data-tags="federated fairness">
+        <div class="pub-venue">PMLR 2024 &nbsp;·&nbsp; 16% acceptance</div>
+        <div class="pub-title">Privacy-Preserving Group Fairness in Cross-Device Federated Learning</div>
+        <div class="pub-authors"><strong>S. Pentyala</strong>, N. Neophytou, A. Nascimento, M. De Cock, G. Farnadi</div>
+        <div class="pub-links">
+          <a class="pub-btn" href="https://nips.cc/virtual/2022/58464" target="_blank">Paper</a>
+        </div>
+      </div>
+
+      <div class="pub-card" data-tags="federated privacy">
+        <div class="pub-venue">PoPETS 2024 &nbsp;·&nbsp; 20% acceptance</div>
+        <div class="pub-title">Privacy-Preserving Membership Queries for Federated Anomaly Detection</div>
+        <div class="pub-authors">J. Vos, <strong>S. Pentyala</strong>, S. Golob, R. Maia, D. Kelly, C. Martins, Z. Erkin, M. De Cock, A. Nascimento</div>
+        <div class="pub-links">
+          <a class="pub-btn" href="https://petsymposium.org/popets/2024/popets-2024-0074.pdf" target="_blank">Paper</a>
+        </div>
+      </div>
+
+      <div class="pub-card" data-tags="federated privacy">
+        <div class="pub-venue">PLOS ONE 2024 &nbsp;·&nbsp; 20% acceptance</div>
+        <div class="pub-title">An End-to-End Framework for Private DGA Detection as a Service</div>
+        <div class="pub-authors">R.J.M. Maia, D. Ray, <strong>S. Pentyala</strong>, R. Dowsley, M. De Cock, A. Nascimento, R. Jacobi</div>
+        <div class="pub-links">
+          <a class="pub-btn" href="https://pubmed.ncbi.nlm.nih.gov/39196905/" target="_blank">Paper</a>
+        </div>
+      </div>
+
+      <div class="pub-card" data-tags="fairness">
+        <div class="pub-venue">ECIR 2023 &nbsp;·&nbsp; 29% acceptance</div>
+        <div class="pub-title">Privacy-Preserving Fair Item Ranking</div>
+        <div class="pub-authors">J.A. Sun, <strong>S. Pentyala</strong>, M. De Cock, G. Farnadi</div>
+        <div class="pub-links">
+          <a class="pub-btn" href="https://www.springerprofessional.de/en/privacy-preserving-fair-item-ranking/24634466" target="_blank">Paper</a>
+        </div>
+      </div>
+
+      <div class="pub-card" data-tags="federated privacy">
+        <div class="pub-venue">ICML 2021 &nbsp;·&nbsp; 21% acceptance</div>
+        <div class="pub-title">Privacy-Preserving Video Classification with Convolutional Neural Networks</div>
+        <div class="pub-authors"><strong>S. Pentyala</strong>, R. Dowsley, M. De Cock</div>
+        <div class="pub-links">
+          <a class="pub-btn" href="https://arxiv.org/abs/2102.03513" target="_blank">Paper</a>
+        </div>
+      </div>
+
+      <div class="pub-card" data-tags="synth privacy">
+        <div class="pub-venue">SIGMOD DEC23 Workshop 2023</div>
+        <div class="pub-title">A Decentralized Information Marketplace Preserving Input and Output Privacy</div>
+        <div class="pub-authors">S. Golob, <strong>S. Pentyala</strong>, R. Dowsley, B. David, M. Larangeira, M. De Cock, A. Nascimento</div>
+        <div class="pub-links">
+          <a class="pub-btn" href="https://dl.acm.org/doi/10.1145/3600046.3600047" target="_blank">Paper</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- WORKSHOPS -->
+    <div class="pub-section-label">Selected Workshop Papers</div>
+    <div class="pub-list">
+
+      <div class="pub-card" data-tags="synth privacy">
+        <div class="pub-venue">PPAI-2025 @ AAAI</div>
+        <div class="pub-title">End to End Collaborative Synthetic Data Generation</div>
+        <div class="pub-authors"><strong>S. Pentyala</strong>, G. Sitaraman, T. Claar, M. De Cock</div>
+      </div>
+
+      <div class="pub-card" data-tags="synth privacy">
+        <div class="pub-venue">GenoPri'24 — 11th Intl. Workshop on Genome Privacy &amp; Security</div>
+        <div class="pub-title">Securely Generating Synthetic Genomic Data from Distributed Data Silos</div>
+        <div class="pub-authors">T. Claar, S. Golob, <strong>S. Pentyala</strong>, G. Sitaraman, M. De Cock, J. Banerjee, L. Foschini</div>
+      </div>
+
+      <div class="pub-card" data-tags="synth privacy">
+        <div class="pub-venue">PPAI-2024 @ AAAI</div>
+        <div class="pub-title">High Epsilon Synthetic Data Vulnerabilities in MST and PrivBayes</div>
+        <div class="pub-authors">S. Golob, <strong>S. Pentyala</strong>, A. Maratkhan, M. De Cock</div>
+      </div>
+
+      <div class="pub-card" data-tags="fairness">
+        <div class="pub-venue">XAI-Finance @ ICAIF 2023</div>
+        <div class="pub-title">Privacy-Preserving Algorithmic Recourse</div>
+        <div class="pub-authors"><strong>S. Pentyala</strong>, S. Sharma, S. Kariyappa, F. Leuce, D. Magazzeni</div>
+      </div>
+
+      <div class="pub-card" data-tags="synth privacy">
+        <div class="pub-venue">SyntheticData4ML @ NeurIPS 2022</div>
+        <div class="pub-title">Secure Multiparty Computation for Synthetic Data Generation from Distributed Data</div>
+        <div class="pub-authors">M. Pereira, <strong>S. Pentyala</strong>, A. Nascimento, R.T. de Sousa Jr., M. De Cock</div>
+      </div>
+
+      <div class="pub-card" data-tags="fairness">
+        <div class="pub-venue">PPAI-2022 @ AAAI</div>
+        <div class="pub-title">PrivFair: A Library for Privacy-Preserving Fairness Auditing</div>
+        <div class="pub-authors"><strong>S. Pentyala</strong>, D. Melanson, M. De Cock, G. Farnadi</div>
+      </div>
+
+    </div>
+
+    <!-- PREPRINTS -->
+    <div class="pub-section-label">Preprints</div>
+    <div class="pub-list">
+
+      <div class="pub-card" data-tags="synth privacy">
+        <div class="pub-venue">Arxiv</div>
+        <div class="pub-title">FHAIM: Fully Homomorphic AIM for Private Synthetic Data Generation</div>
+        <div class="pub-authors">M. Kumar, Q. Lou, P. Barreto, M. De Cock, <strong>S. Pentyala</strong></div>
+      </div>
+
+      <div class="pub-card" data-tags="synth privacy">
+        <div class="pub-venue">Arxiv</div>
+        <div class="pub-title">Privacy Vulnerabilities in Synthetic Single-Cell RNA-Sequence Data</div>
+        <div class="pub-authors">S. Golob, P. McKeever, <strong>S. Pentyala</strong>, M. De Cock, J. Peck</div>
+      </div>
+
+      <div class="pub-card" data-tags="federated privacy">
+        <div class="pub-venue">Arxiv</div>
+        <div class="pub-title">Training Differentially Private Models with Secure Multiparty Computation</div>
+        <div class="pub-authors"><strong>S. Pentyala</strong>, D. Railsback, R. Maia, R. Dowsley, D. Melanson, A. Nascimento, M. De Cock</div>
+      </div>
+
+    </div>
+
+    <!-- PATENTS -->
+    <div class="pub-section-label">Patents</div>
+    <div class="pub-list">
+      <div class="pub-card" data-tags="fairness">
+        <div class="pub-venue">US Patent Application 18/517,211</div>
+        <div class="pub-title">System and Method for Generating Recourse Paths with Privacy Guarantees</div>
+        <div class="pub-authors"><strong>S. Pentyala</strong> et al. · JPMorgan Chase</div>
+      </div>
+      <div class="pub-card" data-tags="fairness">
+        <div class="pub-venue">Pending — JPMorgan Chase</div>
+        <div class="pub-title">Interpretable Time Series Models (undisclosed)</div>
+        <div class="pub-authors"><strong>S. Pentyala</strong> et al.</div>
+      </div>
+    </div>
+
+  </div><!-- /publications -->
+
+</div><!-- /container -->
+
+<footer>
+  Sikha Pentyala &nbsp;·&nbsp;
+  <a href="mailto:sikha@uw.edu">sikha@uw.edu</a> &nbsp;·&nbsp;
+  University of Washington &nbsp;·&nbsp;
+  Last updated: 2025
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
