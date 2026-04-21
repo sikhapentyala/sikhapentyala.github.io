@@ -160,75 +160,76 @@
     </div>
 
     <script>
-        // Set the default week to load on page load (1-11)
-        const DEFAULT_WEEK = 2;
-
-        // Tab labels and their corresponding file indices (week1.html, week2.html, etc.)
-        const WEEK_LABELS = [
-            "Week 3",
-            "Week 4a",
-            "Week 4b",
-            "Week 5",
-            "Week 6",
-            "Week 7",
-            "Week 8",
-            "Week 9",
-            "Week 10a",
-            "Week 10b",
-            "Week 10c"
+        // Each entry: label shown on tab, filename to load, evaluation date (9am PT)
+        const WEEKS = [
+            { label: "Week 3",   file: "week3.html",   date: new Date("2026-04-15T09:00:00") },
+            { label: "Week 4a",  file: "week4a.html",  date: new Date("2026-04-20T09:00:00") },
+            { label: "Week 4b",  file: "week4b.html",  date: new Date("2026-04-22T09:00:00") },
+            { label: "Week 5",   file: "week5.html",   date: new Date("2026-04-29T09:00:00") },
+            { label: "Week 6",   file: "week6.html",   date: new Date("2026-05-06T09:00:00") },
+            { label: "Week 7",   file: "week7.html",   date: new Date("2026-05-13T09:00:00") },
+            { label: "Week 8",   file: "week8.html",   date: new Date("2026-05-20T09:00:00") },
+            { label: "Week 9",   file: "week9.html",   date: new Date("2026-05-27T09:00:00") },
+            { label: "Week 10a", file: "week10a.html", date: new Date("2026-06-01T09:00:00") },
+            { label: "Week 10b", file: "week10b.html", date: new Date("2026-06-03T09:00:00") },
+            { label: "Week 10c", file: "week10c.html", date: new Date("2026-06-05T09:00:00") },
         ];
 
-        let currentWeek = null;
+        // Auto-select: last week whose evaluation date has passed; fall back to first
+        function getDefaultWeekIndex() {
+            const now = new Date();
+            let last = 0;
+            for (let i = 0; i < WEEKS.length; i++) {
+                if (WEEKS[i].date <= now) last = i;
+            }
+            return last;
+        }
+
+        let currentIndex = null;
 
         function initWeekGrid() {
             const grid = document.getElementById('weekGrid');
-            for (let i = 1; i <= WEEK_LABELS.length; i++) {
-                const label = WEEK_LABELS[i - 1];
+            WEEKS.forEach((week, i) => {
                 const card = document.createElement('div');
                 card.className = 'week-card';
-                card.innerHTML = `
-                    <div class="week-number">${label}</div>
-                `;
+                card.innerHTML = `<div class="week-number">${week.label}</div>`;
                 card.onclick = () => loadWeek(i);
                 grid.appendChild(card);
-            }
+            });
         }
 
-        function loadWeek(weekNum) {
-            currentWeek = weekNum;
+        function loadWeek(index) {
+            currentIndex = index;
+            const week = WEEKS[index];
 
-            document.querySelectorAll('.week-card').forEach((card, index) => {
-                card.classList.toggle('active', index + 1 === weekNum);
+            document.querySelectorAll('.week-card').forEach((card, i) => {
+                card.classList.toggle('active', i === index);
             });
 
             const contentArea = document.getElementById('contentArea');
             contentArea.innerHTML = '<div class="placeholder"><p>Loading...</p></div>';
 
-            fetch(`week${weekNum}.html`)
+            fetch(week.file)
                 .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Week content not found');
-                    }
+                    if (!response.ok) throw new Error('not found');
                     return response.text();
                 })
                 .then(html => {
-                    const label = WEEK_LABELS[weekNum - 1];
                     contentArea.innerHTML = `
                         <div class="content-header">
-                            <h2>${label}</h2>
+                            <h2>${week.label}</h2>
                         </div>
                         <div class="content-body">
                             <iframe srcdoc="${html.replace(/"/g, '&quot;')}" style="width: 100%; min-height: 800px; border: none; background: white;"></iframe>
                         </div>
                     `;
                 })
-                .catch(error => {
-                    const label = WEEK_LABELS[weekNum - 1];
+                .catch(() => {
                     contentArea.innerHTML = `
                         <div class="placeholder">
                             <div class="placeholder-icon">🔍</div>
                             <h3>Evaluation results not found</h3>
-                            <p>week${weekNum}.html could not be loaded.</p>
+                            <p>${week.file} could not be loaded.</p>
                             <p style="font-size: 0.9em; color: #666;">Make sure the file exists in the same directory as this page.</p>
                         </div>
                     `;
@@ -236,11 +237,7 @@
         }
 
         initWeekGrid();
-
-        // Load the default week on page load
-        if (DEFAULT_WEEK >= 1 && DEFAULT_WEEK <= WEEK_LABELS.length) {
-            loadWeek(DEFAULT_WEEK);
-        }
+        loadWeek(getDefaultWeekIndex());
     </script>
 </body>
 </html>
