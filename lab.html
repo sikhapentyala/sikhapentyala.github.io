@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Lab — Sikha Pentyala</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav id="nav"></nav>
+
+<div class="container">
+
+  <section>
+    <h2>The Lab</h2>
+    <p>
+      We build AI systems that can be trusted with sensitive data, and we test whether the
+      guarantees they promise actually hold. The work spans privacy-preserving synthetic data
+      generation, auditing and attacking AI systems, and applying both in healthcare and
+      genomics.
+    </p>
+    <p>
+      <!-- CHECK: "students at UW Tacoma" is deliberately broad. Say if you'd
+           rather name specific programmes (IT, CSS, Computer Engineering). -->
+      The lab starts at the University of Washington Tacoma in September 2026. I welcome
+      students at UW Tacoma who are curious about privacy, synthetic data, or trustworthy AI.
+      <strong>No prior research experience needed.</strong> Have a look at the projects below and
+      <a href="mailto:sikha@uw.edu">email me</a> about the one that caught your attention.
+      Several of them can be scoped to a single quarter as a capstone or independent study.
+    </p>
+  </section>
+
+  <section>
+    <h2>People</h2>
+
+    <div class="subhead">Lab Lead</div>
+    <ul class="list">
+      <li><strong>Sikha Pentyala</strong>, Assistant Professor, School of Engineering &amp;
+        Technology, University of Washington Tacoma<span class="meta">from September 2026</span></li>
+    </ul>
+
+    <!-- Students: add them here once they have joined and agreed to be listed.
+    <div class="subhead">Students</div>
+    <ul class="list">
+      <li><strong>Name</strong>, M.S. student, UW Tacoma<span class="meta">2026-present</span></li>
+    </ul>
+    -->
+
+    <div class="subhead">Collaborators</div>
+    <ul class="list">
+      <li><a href="http://faculty.washington.edu/mdecock/" target="_blank" rel="noopener"><strong>Martine De Cock</strong></a>,
+        Faculty in Computer Science &amp; Systems, School of Engineering &amp; Technology, UW Tacoma.
+        Privacy-preserving synthetic data generation.</li>
+      <li><a href="https://nursing.uw.edu/person/sarah-iribarren-phd-rn/" target="_blank" rel="noopener"><strong>Sarah Iribarren</strong></a>,
+        Associate Professor, Biobehavioral Nursing &amp; Health Informatics, UW School of Nursing.
+        Conversational AI for treatment adherence and responsible AI in health education.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Current Projects</h2>
+
+    <div class="card">
+      <span class="badge badge-green">Ongoing</span>
+      <h3 style="display:inline; font-size:1rem;">Privacy-preserving synthetic genomics on the NAIRR</h3>
+      <p style="margin-top:0.5rem;">
+        Differentially private synthetic genomic data for open biomedical research, running on
+        national AI research infrastructure. Uses secure multiparty computation so institutions
+        never expose individual genetic records.
+      </p>
+      <div class="tags">
+        <span class="tag tag-blue">Synthetic Data</span>
+        <span class="tag tag-blue">PETs</span>
+        <span class="tag tag-green">Genomics</span>
+        <span class="tag tag-green">NAIRR</span>
+      </div>
+      <p class="note" style="margin-top:0.6rem; font-size:0.85rem;">
+        Good fit if you like cryptography, systems, or large-scale compute.
+      </p>
+    </div>
+
+    <div class="card">
+      <span class="badge badge-green">Ongoing</span>
+      <h3 style="display:inline; font-size:1rem;">Synthetic genomic data for rare diseases</h3>
+      <p style="margin-top:0.5rem;">
+        Generating synthetic germline data for rare conditions such as Neurofibromatosis Type 1,
+        addressing the core problem in rare disease research: there is simply not enough data.
+      </p>
+      <div class="tags">
+        <span class="tag tag-blue">Synthetic Data</span>
+        <span class="tag tag-blue">Generative Models</span>
+        <span class="tag tag-green">Genomics</span>
+        <span class="tag tag-green">Healthcare</span>
+      </div>
+      <p class="note" style="margin-top:0.6rem; font-size:0.85rem;">
+        Good fit if you like generative models or computational biology.
+      </p>
+    </div>
+
+    <div class="card card--orange">
+      <span class="badge badge-green">Ongoing</span>
+      <h3 style="display:inline; font-size:1rem;">Federated synthetic data generation</h3>
+      <p style="margin-top:0.5rem;">
+        Generating synthetic data from records split across institutions that can never be
+        pooled. The methods rest on cryptography: secure multiparty computation and fully
+        homomorphic encryption, so no site ever reveals its own records to the others.
+      </p>
+      <div class="tags">
+        <span class="tag tag-blue">Synthetic Data</span>
+        <span class="tag tag-blue">Secure MPC</span>
+        <span class="tag tag-blue">FHE</span>
+        <span class="tag tag-green">Healthcare</span>
+      </div>
+      <p class="note" style="margin-top:0.6rem; font-size:0.85rem;">
+        Good fit if you like applied cryptography or distributed systems.
+      </p>
+    </div>
+
+    <div class="card card--orange">
+      <span class="badge badge-blue">Starting</span>
+      <h3 style="display:inline; font-size:1rem;">Synthetic data multiplicity</h3>
+      <p style="margin-top:0.5rem;">
+        What happens when you generate many synthetic datasets from the same source? Studying
+        how utility, privacy, and bias vary run to run, and what that means for trusting any
+        single release.
+      </p>
+      <div class="tags">
+        <span class="tag tag-blue">Synthetic Data</span>
+        <span class="tag tag-orange">Robustness</span>
+        <span class="tag tag-orange">Multiplicity</span>
+      </div>
+      <p class="note" style="margin-top:0.6rem; font-size:0.85rem;">
+        Good fit if you like statistics or careful experimental design.
+      </p>
+    </div>
+
+    <div class="card card--green">
+      <span class="badge badge-green">Ongoing</span>
+      <h3 style="display:inline; font-size:1rem;">AI-based conversational systems</h3>
+      <p style="margin-top:0.5rem;">
+        LLM agents supporting tuberculosis patients with treatment adherence and coping, and
+        AI tutors for healthcare professionals with responsible-AI modules covering privacy,
+        bias, and harm mitigation.
+      </p>
+      <div class="tags">
+        <span class="tag tag-orange">LLMs &amp; Agents</span>
+        <span class="tag tag-green">Healthcare</span>
+        <span class="tag tag-green">AI in Education</span>
+      </div>
+      <p class="note" style="margin-top:0.6rem; font-size:0.85rem;">
+        Good fit if you like NLP, human-centered design, or health applications.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Sections to add once the lab is running. Delete this comment
+       wrapper when you are ready to switch them on.
+
+  <section>
+    <h2>Lab Activities</h2>
+    <ul class="list">
+      <li>Reading group, weekly during term</li>
+      <li>Competition entries: CAMDA, NIST CRC, and similar red-teaming challenges</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Code &amp; Resources</h2>
+    <ul class="list">
+      <li>Tools and datasets released by the lab</li>
+    </ul>
+  </section>
+
+       ============================================================ -->
+
+</div>
+
+<footer id="footer"></footer>
+
+<script src="publications.js"></script>
+<script src="news.js"></script>
+<script src="site.js"></script>
+</body>
+</html>

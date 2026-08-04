@@ -7,183 +7,120 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a class="nav-brand" href="index.html">Sikha Pentyala</a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="teaching.html" class="active">Teaching</a></li>
-      <li><a href="service.html">Service</a></li>
+<nav id="nav"></nav>
+
+<div class="container">
+
+  <section>
+    <h2>Courses</h2>
+    <ul class="list">
+      <li>TCSS 555 — Machine Learning, Guest lecturer and teaching assistant, Fall 2025, UW Tacoma</li>
+      <li>TCSS 555 — Machine Learning, Teaching assistant and grader, Fall 2024, UW Tacoma</li>
+      <li>TCSS 343 — Design and Analysis of Algorithms, Teaching assistant and grader, Fall 2024, UW Tacoma</li>
+      <li>TCSS 143 — Fundamentals of Object-Oriented Programming, Instructor of record, Spring 2023, UW Tacoma</li>
+      <li>TCSS 143 — Fundamentals of Object-Oriented Programming, Instructor of record, Winter 2023, UW Tacoma</li>
     </ul>
-  </div>
-</nav>
 
-<div class="container page-content">
-
-  <!-- ── PHILOSOPHY ─────────────────────────────────────── -->
-  <div class="section-block">
-    <h2 class="section-title"><i class="fa-solid fa-chalkboard-user"></i> Teaching Philosophy</h2>
-    <div class="philosophy-box">
-      My teaching is guided by three principles: <strong>adaptability</strong> — meeting each
-      classroom where it is; <strong>trust and mutual respect</strong> — fostering an open, safe
-      environment where students feel empowered to question and explore; and
-      <strong>learning by application</strong> — grounding abstract concepts in real-world
-      problems. I believe curiosity is a best motivator, and I design my courses
-      to cultivate it. 
-    </div>
-     <!-- ── Diversity ──────────────────────────────────── 
-     My teaching effectiveness rating improved from 3.0/5.0 to 4.6/5.0
-      across two consecutive quarters as primary instructor for TCSS 143.
-
-    <p style="font-size:0.9rem; color:var(--muted);">
-      As an international student, woman of color, and first-generation professional, I bring
-      deep empathy to inclusive pedagogy — using culturally diverse examples, anonymous feedback
-      channels, and flexible office hours to make computing accessible to all learners.
-    </p>
-  </div>
-    Diversity ──────────────────────────────────── -->
-
-  <!-- ── COURSES TAUGHT ──────────────────────────────────── -->
-  <div class="section-block">
-    <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Courses</h2>
-
-    <table class="course-table">
-      <thead>
-        <tr>
-          <th>Term</th>
-          <th>Course</th>
-          <th>Role</th>
-          <th>Institution</th>
-        </tr>
-      </thead>
-      <tbody>
-       <tr>
-          <td>Fall 2025</td>
-          <td>TCSS 555 — Machine Learning</td>
-          <td class="role-cell">Guest Lecture / TA</td>
-          <td>UW Tacoma</td>
-        </tr>
-        <tr>
-          <td>Fall 2024</td>
-          <td>TCSS 555 — Machine Learning</td>
-          <td class="role-cell">TA / Grader</td>
-          <td>UW Tacoma</td>
-        </tr>
-        <tr>
-          <td>Fall 2024</td>
-          <td>TCSS 343 — Design and Analysis of Algorithms</td>
-          <td class="role-cell">TA / Grader</td>
-          <td>UW Tacoma</td>
-        </tr>
-        <tr>
-          <td>Spring 2023</td>
-          <td>TCSS 143 — Fundamentals of Object-Oriented Programming</td>
-          <td class="role-cell">Primary Instructor (instructor of record)</td>
-          <td>UW Tacoma</td>
-        </tr>
-        <tr>
-          <td>Winter 2023</td>
-          <td>TCSS 143 — Fundamentals of Object-Oriented Programming</td>
-          <td class="role-cell">Primary Instructor (instructor of record)</td>
-          <td>UW Tacoma</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <!-- Teaching eval highlight 
-    <div style="background:var(--card); border:1px solid var(--border); border-radius:8px; padding:1.1rem 1.3rem; margin-top:1rem;">
-      <div style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--muted); font-weight:700; margin-bottom:0.7rem;">
-        Teaching Evaluation Highlights — TCSS 143 Spring 2023
-      </div>
-      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap:1rem; margin-bottom:0.8rem;">
-        <div style="text-align:center;">
-          <div style="font-family:var(--serif); font-size:2rem; font-weight:600; color:var(--accent);">4.6</div>
-          <div style="font-size:0.8rem; color:var(--muted);">Overall Rating (/ 5.0)</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="font-family:var(--serif); font-size:2rem; font-weight:600; color:var(--accent);">5.0</div>
-          <div style="font-size:0.8rem; color:var(--muted);">Instructor Effectiveness</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="font-family:var(--serif); font-size:2rem; font-weight:600; color:var(--accent);">5.0</div>
-          <div style="font-size:0.8rem; color:var(--muted);">Availability for Help</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="font-family:var(--serif); font-size:2rem; font-weight:600; color:var(--accent);">5.2</div>
-          <div style="font-size:0.8rem; color:var(--muted);">Challenge &amp; Engagement Index (/ 7)</div>
-        </div>
-      </div>
-      <p style="font-size:0.84rem; color:var(--muted); font-style:italic;">
-        "The time that the instructor is taking on every concept to ensure it is well understood is very helpful." — Student, Spring 2023
-      </p>
-      <p style="font-size:0.82rem; color:var(--subtle); margin-top:0.3rem;">
-        Improved from 3.0 (Winter 2023) → 4.6 (Spring 2023) through active mid-term feedback integration.
-      </p>
-    </div>
-  </div> -->
-
-  <!-- ── MENTORING ───────────────────────────────────────── -->
-  <div class="section-block">
-    <h2 class="section-title"><i class="fa-solid fa-people-group"></i> Advising &amp; Mentoring</h2>
-    <ul class="mentee-bullet-list">
-      <li>Mayank Kumar, Ph.D. Computer Science, UCF, 2025-present, Privacy-preserving Synthetic Data Generation</li>
-      <li>Abinava Bharati Babu, M.S. Computer Science, UW Tacoma, 2025–present, Federated Synthetic Data generation for Hepatalogy (Committee Member for Capstone Project)</li>
-      <li>Jasmine Sellers, B.S. Computer Science, UW Tacoma, 2025, Software for Synthetic Data Generation</li>
-      <li>Jack McFarland, B.S. Computer Science, UW Bothell, 2024, Federated Reinforcement Learning for Fairness (Mary Gates Fellow)</li>
-      <li>Shane Menzies, B.S. Computer Science, UW Tacoma, 2024-2025, Federated Synthetic Data Generation for Genomics (Mary Gates Mentor; Mary Gates Fellow)</li>
-      <li>Trae Claar, B.S. Computer Science, UW Tacoma, 2024, Federated Synthetic Data Generation</li>
-      <li>3+, M.S. Computer Science, UW Tacoma, 2026-present</li>
+    <!-- CHECK: SEED-AI micromodules go here once you have titles and a term.
+         Uncomment and fill in. Format matches the courses list above.
+    <div class="subhead">Curriculum Development</div>
+    <ul class="list">
+      <li>Responsible AI micromodules for healthcare professionals, AI@UW SEED-AI Grant, 2026</li>
     </ul>
-  </div>
+    -->
+  </section>
 
-  <!-- ── TEACHING INTERESTS ──────────────────────────────── -->
-  <div class="section-block">
-    <h2 class="section-title"><i class="fa-solid fa-lightbulb"></i> Teaching Interests</h2>
-   <!-- <p style="font-size:0.92rem; color:#333; margin-bottom:1rem;">
-      My industrial background as a software lead and research expertise in AI position me
-      to teach a broad range of courses. I am particularly interested in developing new
-      graduate courses in my research areas.
-    </p>-->
-    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1.2rem;">
-      <div>
-         <!--<div style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--muted); font-weight:700; margin-bottom:0.6rem;">Ready to Teach</div> -->
-        <ul style="list-style:none; font-size:0.88rem; color:#333; display:flex; flex-direction:column; gap:0.35rem;"> 
-          <li>🧠 Machine Learning (graduate &amp; undergraduate)</li>
-          <li>🔒 Privacy in Machine Learning</li>
-          <li>🤖 Trustworthy / Responsible AI</li>
-          <li>🔐 Cybersecurity &amp; AI Safety</li>
-          <!--<li>📊 Data Science &amp; Algorithms</li>-->
-          <li>☕ Algorithms / Programming (undergraduate)</li>
+  <section>
+    <h2>Mentoring and Advising</h2>
+
+    <div class="subhead">Current</div>
+    <ul class="list">
+      <li>
+        <strong>Mayank Kumar</strong> — Ph.D. student, Computer Science, University of Central Florida
+        <span class="meta">2025–present</span>
+        <ul>
+          <li>Privacy-preserving synthetic data generation; co-author, ICML 2026</li>
+          <li>Mentor, with Dr. Qian Lou (advisor)</li>
         </ul>
-      </div>
-      <div>
-        <!--<div style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--muted); font-weight:700; margin-bottom:0.6rem;">New Courses to Develop</div>-->
-        <ul style="list-style:none; font-size:0.88rem; color:#333; display:flex; flex-direction:column; gap:0.35rem;">
-          <li>🧬 Generative AI for Healthcare</li>
-           <li>🔬 Synthetic Data and Applications</li>
-          <li>⚖️ Auditing in AI -- Fairness, Accountability &amp; Transparency</li>
-          <li>🌐 AI for Societal Impact</li>
+      </li>
+      <!-- CHECK: fill in programme, years, and project for the two students below. -->
+      <li>
+        <strong>Poojitha Basani</strong> — M.S. student, UW Tacoma
+        <span class="meta">2026–present</span>
+        <ul>
+          <li>AI-Enabled Digital Care for Tuberculosis Management</li>
+          <li>Mentor and co-advisor, with Dr. Martine De Cock (PI, advisor); capstone committee member</li>
         </ul>
-      </div>
-    </div>
-  </div>
+      </li>
+      <li>
+        <strong>Anson N George</strong> — M.S. student, UW Tacoma
+        <span class="meta">2026–present</span>
+        <ul>
+          <li>Privacy Leakage in Synthetic EHR Data: A Membership Inference Study</li>
+          <li>Mentor, with Dr. Martine De Cock (advisor)</li>
+        </ul>
+      </li>
+    </ul>
 
-</div><!-- /container -->
+    <div class="subhead">Past</div>
+    <ul class="list">
+      <li>
+        <!-- CHECK: confirm end year for Abinava. -->
+        <strong>Abinava Bharati Babu</strong> — M.S. Computer Science &amp; Systems, UW Tacoma
+        <span class="meta">2025–2026</span>
+        <ul>
+          <li>Federated synthetic data generation for hepatology; co-author, ACM BCB 2026</li>
+          <li>Mentor and co-advisor, with Dr. Martine De Cock (PI, advisor); capstone committee member</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Jasmine Sellers</strong> — B.S. Computer Science, UW Tacoma
+        <span class="meta">2025</span>
+        <ul>
+          <li>Software tooling for synthetic data generation</li>
+          <li>Mentor and co-advisor, with Dr. Martine De Cock (PI, advisor)</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Shane Menzies</strong> — B.S. Computer Science, UW Tacoma
+        <span class="meta">2024–2025</span>
+        <ul>
+          <li>Federated synthetic data generation for genomics; co-author, ISMB/ECCB 2025</li>
+          <li>Mary Gates Research Scholar</li>
+          <li>Mentor, with Dr. Martine De Cock (PI, advisor)</li>
+        </ul>
+      </li>
+      <li>
+        <!-- CHECK: spelling — UW Bothell lists her as Afra Mashhadi (two h's). -->
+        <strong>Jack McFarland</strong> — B.S. Computer Science, UW Bothell
+        <span class="meta">2024</span>
+        <ul>
+          <li>Federated reinforcement learning for fairness</li>
+          <li>Mary Gates Research Scholar</li>
+          <li>Mentor, with Dr. Afra Mashhadi (PI, advisor)</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Trae Claar</strong> — B.S. Computer Science, UW Tacoma
+        <span class="meta">2024</span>
+        <ul>
+          <li>Federated synthetic data generation; co-author, GenoPri 2024 and PPAI 2025</li>
+          <li>Mentor, with Dr. Martine De Cock (PI, advisor)</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
 
-<footer>
-  Sikha Pentyala &nbsp;·&nbsp;
-  <a href="mailto:sikha@uw.edu">sikha@uw.edu</a> &nbsp;·&nbsp;
-  University of Washington &nbsp;·&nbsp;
-  Last updated: 2025
-</footer>
+</div>
 
-<script src="main.js"></script>
+<footer id="footer"></footer>
+
+<script src="publications.js"></script>
+<script src="news.js"></script>
+<script src="site.js"></script>
 </body>
 </html>

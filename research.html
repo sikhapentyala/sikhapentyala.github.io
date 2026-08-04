@@ -7,390 +7,169 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a class="nav-brand" href="index.html">Sikha Pentyala</a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="research.html" class="active">Research</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="teaching.html">Teaching</a></li>
-      <li><a href="service.html">Service</a></li>
-    </ul>
-  </div>
-</nav>
+<nav id="nav"></nav>
 
-<div class="container page-content">
+<div class="container">
 
-  <!-- ── RESEARCH OVERVIEW ─────────────────────────────────── -->
-  <div class="section-block" id="overview">
-    <h2 class="section-title"><i class="fa-solid fa-flask"></i> Research Overview</h2>
-
-    <div class="philosophy-box">
-I work on <strong>Responsible and Trustworthy AI</strong> — developing methods and frameworks 
-to ensure AI systems are private, fair, robust, and transparent. My work spans the design, 
-auditing, and application of trustworthy AI systems, with a focus on high-impact domains.
-    </div>
-
-      <div class="section-block">
-    <p style="font-size:0.94rem; color:var(--ink); margin-bottom:0.9rem; line-height:1.75;">
-      My current research work spans four directions:
+  <section>
+    <h2>Research Overview</h2>
+    <p>
+I work on Responsible and Trustworthy AI — developing methods and frameworks to ensure AI systems are private, fair, robust, and transparent. My work spans the design, auditing, and application of trustworthy AI systems, with a focus on high-impact domains.
     </p>
-    <ul class="service-list" style="margin-bottom:0.8rem;">
-      <!--<li><strong>Synthetic Data &amp; Digital Twins</strong> — generating privacy-preserving tabular synthetic datasets, longitudinal synthetic datasets and digital twins</li>
-      <li><strong>Auditing for  &amp; Developing Responsible AI</strong> — auditing AI systems for fairness, privacy, robustness, and transparency and developing methods to achieve them</li>
-      <li><strong>AI for Good </strong> — applying LLMs for healthcare applications; synthetic data and digital twins for healthcare</li>
-      <li><strong>Contextual Integrity &amp; Privacy</strong> — grounding formal privacy guarantees in social-theoretic frameworks, bridging mathematical privacy with human norms for principled AI system design.</li>-->
+  </section>
 
-      <li><strong>Synthetic Data &amp; Digital Twins</strong> — generating privacy-preserving (tabular) synthetic datasets, longitudinal synthetic datasets, multimodal synthetic datasets, and constructing digital twins for simulation and analysis</li>
-      <li><strong>Trustworthy &amp; Responsible AI</strong> — auditing and advancing AI systems across the pillars of trustworthiness: fairness, privacy, robustness, and transparency</li>
-      <li><strong>Privacy &amp; Context</strong> — grounding privacy and fairness guarantees in social and situational context; bridging formal methods with human norms, with growing emphasis on agentic AI systems where contextual boundaries are dynamic</li>
-      <li><strong>AI for Good</strong> — applying AI to high-impact domains including healthcare (clinical NLP, synthetic data, digital twins) and education (LLM-assisted learning and personalization)</li>
+  <section>
+    <div class="card">
+      <h3>Synthetic Data &amp; Digital Twins</h3>
+      <div class="card-question">How do we enable access to valuable data responsibly?</div>
+      <p>
+Sensitive datasets in domains such as genomics, healthcare, and finance contain enormous research value but often cannot be openly shared due to privacy risks. Synthetic data offers a promising path forward by generating artificial datasets that preserve the characteristics  of real data while reducing the risk of exposing individuals. I view synthetic data as an important infrastructure for enabling open science and collaborative research in settings where access to real data is limited.
+      </p>
+      <p>
+My research has focused on developing privacy-preserving synthetic data generation methods, particularly when data is distributed across institutions that cannot share their sensitive real data. I have explored approaches that combine differential privacy, secure multiparty computation, and generative models to enable collaborative synthetic data generation while protecting sensitive information. My work has also examined the privacy risks of synthetic data through auditing and attack-based evaluation, highlighting the importance of understanding both the capabilities and limitations of synthetic data.
+      </p>
+      <p>
+Moving forward, I aim to extend this direction toward more complex and realistic synthetic data generation settings. Important open questions include how to generate multimodal synthetic datasets where text, images, and tabular information may reveal different types of sensitive information; how to generate longitudinal data that preserves meaningful relationships over time; and how to understand the tradeoffs among privacy, utility, fairness, and robustness when generating synthetic datasets for real-world applications.
+      </p>
+      <div class="tags">
+        <span class="tag tag-plain">Differential Privacy</span>
+        <span class="tag tag-plain">Secure MPC</span>
+        <span class="tag tag-plain">Federated Learning</span>
+        <span class="tag tag-plain">Generative Models</span>
+      </div>
+      <div class="theme-pubs" data-featured="sdg"></div>
+    </div>
 
+    <div class="card card--orange">
+      <h3>Auditing &amp; Assurance</h3>
+      <div class="card-question">How do we know AI systems are trustworthy and how do we build them responsibly?</div>
+      <p>
+AI systems are increasingly deployed in high-impact settings where failures in privacy, fairness, robustness, or transparency can have significant consequences. Building trustworthy AI requires not only designing systems with desirable properties, but also developing methods to evaluate, verify, and assure that these properties are maintained throughout the AI lifecycle.
+      </p>
+      <p>
+Building on my experience in privacy-preserving AI, I investigate methods for auditing and assuring trustworthy AI systems. My prior work has examined privacy risks in synthetic data through privacy attacks and red-teaming approaches, highlighting the importance of evaluating whether privacy guarantees hold in practice. I have also explored constructive approaches for trustworthy AI, including privacy-preserving fairness auditing and algorithmic recourse mechanisms that enable evaluation and explanation while protecting sensitive information.
+      </p>
+      <p>
+Moving forward, I aim to broaden this direction toward comprehensive AI assurance frameworks that address multiple dimensions of trustworthiness. With the emergence of foundation models and agentic AI systems, I am interested in developing methods to develop new methods of auditing systems.
+</p>
+      <div class="tags">
+        <span class="tag tag-plain">Group Fairness</span>
+        <span class="tag tag-plain">Privacy Attacks</span>
+        <span class="tag tag-plain">Algorithmic Recourse</span>
+        <span class="tag tag-plain">Interpretability</span>
+        <span class="tag tag-plain">Auditing</span>
+      </div>
+      <div class="theme-pubs" data-featured="trustworthy"></div>
+    </div>
 
+    <div class="card card--purple">
+      <h3>Privacy &amp; Context</h3>
+       <div class="card-question">How do we define trustworthy behavior in human contexts?</div>
+      <p>
+As AI systems become increasingly integrated into human decision-making, ensuring that their behavior is appropriate requires more than optimizing technical performance. Many existing approaches provide formal guarantees for individual aspects of trustworthy AI, but they often do not fully capture the social, situational, and domain-specific context in which AI systems operate. For example, whether an AI decision is fair, whether an explanation is meaningful, or whether information use is appropriate can depend strongly on the context in which the system is deployed.
+</p>
+<p>
+Building on my background in privacy-preserving AI, I am interested in exploring how contextual information can help bridge formal guarantees with human expectations. My previous work on differential privacy, secure multiparty computation, fairness, and trustworthy AI provides a foundation for investigating how notions of privacy, fairness, transparency, and faithfulness can be grounded in the contexts where AI systems are used.
+      </p>
+      <p>
+This emerging research direction explores fundamental questions about context-aware trustworthy AI: How should notions of privacy, fairness, and faithfulness, evolve for foundation models and agentic AI systems that operate across multiple contexts?
+</p>
+      <div class="tags">
+        <span class="tag tag-plain">Contextual Integrity</span>
+        <span class="tag tag-plain">Agentic AI</span>
+        <span class="tag tag-plain">Privacy Theory</span>
+        <span class="tag tag-plain">Machine Unlearning</span>
+      </div>
+      <div class="theme-pubs" data-featured="context"></div>
+    </div>
+
+    <div class="card card--green">
+      <h3>AI for Good</h3>
+      <div class="card-question">How do we translate above into impact?</div>
+      <p>
+        AI systems have the potential to transform critical domains such as healthcare and education, but their adoption requires addressing challenges related to privacy, fairness, transparency, and trust. I have contributed in applying trustworthy AI methods to real-world problems through interdisciplinary collaborations such as conversational AI systems that support patients through challenging treatment journeys, synthetic data for rare diseases, and AI-assisted learning systems.
+      </p>
+      <p>Moving forward, I aim to continue developing trustworthy AI systems together with domain experts, where real-world challenges inform the methods we create.</p>
+      <div class="tags">
+        <span class="tag tag-plain">Healthcare</span>
+        <span class="tag tag-plain">Genomics</span>
+        <span class="tag tag-plain">AI in Education</span>
+        <span class="tag tag-plain">LLMs &amp; Agents</span>
+      </div>
+      <div class="theme-pubs" data-featured="aiforgood"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Grants &amp; Fellowships</h2>
+    <!-- CHECK: add award amounts and performance periods where you have them. -->
+    <ul class="list">
+      <li><strong>AI@UW SEED-AI Grant</strong>, Advancing Responsible and Ethical AI Literacy
+        for Healthcare Professionals and Personalized Education
+        <ul>
+          <li>Role: co-PI, with Dr. Sarah Iribarren (PI), UW School of Nursing</li>
+          <li>2026</li>
+        </ul>
+      </li>
+      <li><strong>JPMorgan Chase PhD Fellowship</strong>
+        <ul>
+          <li>Awarded to support doctoral research on privacy-preserving synthetic data generation</li>
+          <li>2023–2024</li>
+        </ul>
+      </li>
+      <li><strong>Carwein-Andrews Distinguished Fellowship</strong>, UW Tacoma
+        <ul>
+          <li>Research on privacy-preserving synthetic data generation</li>
+          <li>2023–2024</li>
+        </ul>
+      </li>
+      <li><strong>Carwein-Andrews Endowment Award</strong>, UW Tacoma
+        <ul>
+          <li>Research on privacy-preserving machine learning</li>
+          <li>2022–2023</li>
+        </ul>
+      </li>
+      <li><strong>Andrew and Julie Fry Innovation Award</strong>, UW Tacoma
+        <ul>
+          <li>Research on privacy-preserving machine learning</li>
+          <li>2023</li>
+        </ul>
+      </li>
     </ul>
-  </div>
+  </section>
 
-   <!-- <p style="font-size:0.93rem; color:var(--ink); line-height:1.75; margin:1rem 0 1.5rem;">
-      My doctoral work established the technical foundation of this agenda at the intersection of
-      <strong>Differential Privacy (DP)</strong> and <strong>Secure Multi-Party Computation (MPC)</strong>.
-      I designed protocols enabling multiple parties to jointly analyze distributed, sensitive data —
-      genomic cohorts, clinical records, financial transactions — without revealing anything beyond
-      the output. This work shaped my core thesis: that rigorous privacy must be both theoretically
-      guaranteed <em>and</em> deployable in real systems at national scale (NAIRR).
-    </p> -->
+  <section>
+    <h2>Competitions</h2>
+    <ul class="list list--noicon">
+      <li><span class="award-icon">🏆</span><strong>1st place</strong>, red-teaming track for bulk RNA-seq.
+        CAMDA 2026 Health Privacy Challenge</li>
+      <li><span class="award-icon">🏆</span><strong>Winner</strong>.
+        <a href="https://pages.nist.gov/privacy_collaborative_research_cycle/pages/red_team.html" target="_blank" rel="noopener">NIST Collaborative Research Cycle Challenge</a><span class="meta">2025</span></li>
+      <li><span class="award-icon">🏆</span><strong>1st and 2nd place</strong>, bulk RNA-seq and single-cell RNA-seq
+        generation tracks.
+        <a href="https://benchmarks.elsa-ai.eu/?ch=4" target="_blank" rel="noopener">CAMDA 2025 Health Privacy Challenge</a></li>
+      <li><span class="award-icon">🏆</span><strong>1st place</strong>, membership inference attacks.
+        <a href="https://snake-challenge.github.io/leaderboard.html" target="_blank" rel="noopener">SNAKE Challenge</a></li>
+      <li><span class="award-icon">🥈</span><strong>2nd prize</strong>, Phase 2 Track A, on financial
+        fraud detection. Led the team.
+        <a href="https://drivendata.co/blog/federated-learning-pets-prize-winners-phases-2-3" target="_blank" rel="noopener">U.S.–U.K. PETs Prize Challenges</a>, hosted by NSF with support
+        from NIST, OSTP, and NASA<span class="meta">results announced at the White House, 2023</span></li>
+      <li><span class="award-icon">🏆</span><strong>Winner</strong>, Track III, on privacy-preserving
+        diagnosis of transthyretin amyloid cardiomyopathy. Led the team.
+        <a href="https://www.humangenomeprivacy.org/2021/" target="_blank" rel="noopener">iDASH 2021 Secure Genome Analysis Competition</a>, supported by NIH</li>
+    </ul>
+  </section>
 
-    <!-- 4 direction panels — each id'd for anchor links -->
-    <!--  <div class="dir-list">
+</div>
 
-      <div class="dir-card" id="area-synth">
-        <div class="dir-head">
-          <span style="color:var(--accent);"><i class="fa-solid fa-database"></i></span>
-          <h3>Synthetic Data &amp; Digital Twins</h3>
-        </div>
-        <p class="dir-motivation">
-          Sensitive datasets in genomics, healthcare, and finance hold enormous research value but
-          cannot be openly shared. Synthetic data generation creates statistically realistic proxies
-          with formal DP and MPC guarantees — enabling open science without exposing individual records.
-          My current postdoctoral work extends this to digital-twin construction for cross-institutional
-          biomedical research on the NAIRR.
-        </p>
-        <div class="dir-rq-label">Open Questions</div>
-        <ul class="dir-rq-list">
-          <li>How do we preserve downstream ML utility under tight ε budgets?</li>
-          <li>Can faithful digital twins be built from fully distributed data without centralizing records?</li>
-          <li>What metrics best capture synthetic data quality for genomic applications?</li>
-        </ul>
-        <div class="dir-footer">
-          <div class="tags">
-            <span class="tag tag-blue">Differential Privacy</span>
-            <span class="tag tag-blue">Secure MPC</span>
-            <span class="tag tag-blue">Generative Models</span>
-            <span class="tag tag-green">Genomics</span>
-            <span class="tag tag-green">NAIRR</span>
-          </div>
-          <a class="dir-link" href="#projects">→ Related projects</a>
-        </div>
-      </div>
+<footer id="footer"></footer>
 
-      <div class="dir-card dir-card--green" id="area-health">
-        <div class="dir-head">
-          <span style="color:var(--green);"><i class="fa-solid fa-dna"></i></span>
-          <h3>AI in Healthcare &amp; Genomics</h3>
-        </div>
-        <p class="dir-motivation">
-          Clinical and genomic research requires collaborative access to data across hospitals and
-          institutions — yet patient privacy prohibits central pooling. Privacy-preserving ML bridges
-          this gap: joint model training across federated networks, synthetic scRNA-seq cell profile
-          generation, and privacy-preserving diagnostics — all without sharing raw patient data.
-        </p>
-        <div class="dir-rq-label">Open Questions</div>
-        <ul class="dir-rq-list">
-          <li>How to handle extreme clinical heterogeneity across institutions in federated settings?</li>
-          <li>What are the right privacy-utility tradeoffs for genomic data?</li>
-          <li>How can we validate that synthetic biomedical data is scientifically sound and safe to release?</li>
-        </ul>
-        <div class="dir-footer">
-          <div class="tags">
-            <span class="tag tag-green">scRNA-seq</span>
-            <span class="tag tag-green">Healthcare</span>
-            <span class="tag tag-blue">Federated Learning</span>
-            <span class="tag tag-green">NAIRR</span>
-          </div>
-          <a class="dir-link" href="#projects">→ Related projects</a>
-        </div>
-      </div>
-
-      <div class="dir-card dir-card--orange" id="area-auditing">
-        <div class="dir-head">
-          <span style="color:var(--accent2);"><i class="fa-solid fa-shield-halved"></i></span>
-          <h3>Trustworthy AI &amp; Auditing</h3>
-        </div>
-        <p class="dir-motivation">
-          AI systems increasingly shape consequential decisions in hiring, lending, and healthcare.
-          Auditing these systems for fairness, privacy leakage, and robustness — especially when models
-          are proprietary black-boxes — requires protocols that verify compliance without exposing
-          model internals. MPC-based auditing and differentially private recourse mechanisms offer
-          a principled path forward.
-        </p>
-        <div class="dir-rq-label">Open Questions</div>
-        <ul class="dir-rq-list">
-          <li>How do we audit LLMs and foundation models for bias and privacy leakage at scale?</li>
-          <li>Can differentially private algorithmic recourse be made actionable for real users?</li>
-          <li>What does rigorous third-party AI auditing look like in practice?</li>
-        </ul>
-        <div class="dir-footer">
-          <div class="tags">
-            <span class="tag tag-orange">Group Fairness</span>
-            <span class="tag tag-orange">Algorithmic Recourse</span>
-            <span class="tag tag-orange">Interpretability</span>
-            <span class="tag tag-blue">LLM Safety</span>
-          </div>
-          <a class="dir-link" href="#projects">→ Related projects</a>
-        </div>
-      </div>
-
-      <div class="dir-card dir-card--purple" id="area-ci">
-        <div class="dir-head">
-          <span style="color:var(--purple);"><i class="fa-solid fa-scale-balanced"></i></span>
-          <h3>Contextual Integrity &amp; PETs</h3>
-        </div>
-        <p class="dir-motivation">
-          Mathematical privacy tools like DP provide strong guarantees but are disconnected from how
-          humans and legal frameworks reason about appropriate information flows. Contextual Integrity
-          (CI) offers a social-theoretic bridge: privacy is preserved when data flows respect the norms
-          of the context in which data was originally shared. This direction grounds formal PETs in CI
-          to build socially-aware AI systems.
-        </p>
-        <div class="dir-rq-label">Open Questions</div>
-        <ul class="dir-rq-list">
-          <li>How to operationalize CI norms into automated policy enforcement?</li>
-          <li>When do DP guarantees coincide with — or diverge from — CI norms?</li>
-          <li>How do machine unlearning and data deletion rights fit into CI frameworks?</li>
-        </ul>
-        <div class="dir-footer">
-          <div class="tags">
-            <span class="tag tag-blue">Contextual Integrity</span>
-            <span class="tag tag-blue">Privacy Theory</span>
-            <span class="tag tag-blue">PETs</span>
-            <span class="tag tag-blue">Machine Unlearning</span>
-          </div>
-          <a class="dir-link" href="#projects">→ Related projects</a>
-        </div>
-      </div>
-
-    </div>
-  </div> -->
-
-  <!-- ── PROJECTS ───────────────────────────────────────────── -->
-  <div class="section-block" id="projects">
-    <h2 class="section-title"><i class="fa-solid fa-diagram-project"></i> Projects</h2>
-
-    <!-- ONGOING -->
-    <div class="proj-section-label" id="ongoing">Ongoing Projects</div>
-    <div class="proj-list">
-
-      <div class="proj-card proj-card--blue">
-        <div class="proj-header">
-          <span class="badge badge-green">Ongoing</span>
-          <span class="proj-title">Privacy-Preserving Synthetic Genomics Data Generation on the NAIRR</span>
-        </div>
-        <p class="proj-desc">Generating differentially private synthetic genomic data for open biomedical research on national AI research infrastructure leveraging Privacy-Enhancing Technologies (PETs) such as Multi-Party Computation (MPC), enabling cross-institutional data sharing without exposing individual genetic records.</p>
-        <div class="tags">
-          <span class="tag tag-blue">Synthetic Data</span>
-          <span class="tag tag-blue">PETs</span>
-          <span class="tag tag-green">Genomics</span>
-          <span class="tag tag-green">NAIRR</span>
-        </div>
-      </div>
-
-      <div class="proj-card proj-card--blue">
-        <div class="proj-header">
-          <span class="badge badge-green">Ongoing</span>
-          <span class="proj-title">Synthetic Genomic Data Generation for Rare Diseases</span>
-        </div>
-        <p class="proj-desc">Developing privacy-preserving synthetic genomic data generation methods for rare diseases, with applications to Neurofibromatosis Type 1 (NF1), to address data scarcity challenges in rare disease research.</p>
-        <div class="tags">
-          <span class="tag tag-blue">Synthetic Data</span>
-          <span class="tag tag-green">Genomics</span>
-          <span class="tag tag-green">Healthcare</span>
-          <span class="tag tag-blue">Generative Models</span>
-        </div>
-      </div>
-
-      <div class="proj-card proj-card--orange">
-        <div class="proj-header">
-          <span class="badge badge-green">Ongoing</span>
-          <span class="proj-title">Federated Digital Twins</span>
-        </div>
-        <p class="proj-desc">Developing methods for constructing longitudinal digital twins in centralized and in federated settings. Federated Settings will then leveraging Privacy-Enhancing Technologies (PETs) such as Multi-Party Computation (MPC) and Fully Homomorphic Encryption (FHE) to enable privacy-preserving collaboration across institutions.</p>
-        <div class="tags">
-          <span class="tag tag-blue">Digital Twins</span>
-          <span class="tag tag-blue">PETs</span>
-          <span class="tag tag-blue">Generative Models</span>
-          <span class="tag tag-green">Healthcare</span>
-        </div>
-      </div>
-
-      <div class="proj-card proj-card--green">
-        <div class="proj-header">
-          <span class="badge badge-green">Ongoing</span>
-          <span class="proj-title">AI-based Conversation Systems</span>
-        </div>
-<p class="proj-desc">Designing LLM-based conversational agents for two high-impact applications: (1) assisting TB patients with adherence, monitoring, and support; and (2) developing AI tutors for healthcare professionals, with integrated responsible AI modules covering privacy, bias, and harm mitigation.</p>
-          <!-- <span class="service-meta">JPMorgan Chase · US Patent 18/517,211</span> -->
-        <div class="tags">
-          <span class="tag tag-orange">LLMs and Agents</span>
-          <span class="tag tag-green">Healthcare</span>
-          <span class="tag tag-green">AI Education</span>
-        </div>
-      </div>
-
-      <div class="proj-card proj-card--green">
-        <div class="proj-header">
-          <span class="badge badge-green">Ongoing</span>
-          <span class="proj-title">Synthetic Data Multiplicity</span>
-        </div>
-<p class="proj-desc">Studying the effects of generating multiple independent synthetic datasets from the same source, examining how utility, privacy, and bias vary across different runs and generation sizes — with implications for the reliability and trustworthiness of generated synthetic data.</p>
-        <div class="tags">
-          <span class="tag tag-blue">Synthetic Data</span>
-          <span class="tag tag-orange">Robustness</span>
-          <span class="tag tag-blue">Privacy</span>
-          <span class="tag tag-orange">Multiplicity</span>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- PAST -->
-    <!-- <div class="proj-section-label" id="past">Selected Past Projects</div>
-    <div class="proj-list">
-
-      <div class="proj-card proj-card--plain">
-        <div class="proj-title">CaPS: Collaborative and Private Synthetic Data Generation from Distributed Sources</div>
-        <p class="proj-desc">The first system enabling multiple data owners to collaboratively generate differentially private synthetic tabular data without ever combining their raw datasets.</p>
-        <div class="tags">
-          <span class="tag tag-blue">Synthetic Data</span>
-          <span class="tag tag-blue">Secure MPC</span>
-          <span class="tag tag-blue">Differential Privacy</span>
-        </div>
-        <p class="proj-meta"><strong>ICML 2024</strong> · 28% acceptance &nbsp;·&nbsp;
-          <a href="https://proceedings.mlr.press/v235/pentyala24a.html" target="_blank">Paper →</a>
-        </p>
-      </div>
-
-      <div class="proj-card proj-card--plain">
-        <div class="proj-title">Privacy Vulnerabilities in Marginals-based Synthetic Data</div>
-        <p class="proj-desc">Identified and demonstrated concrete privacy attacks against widely-used marginals-based synthetic data generation methods, informing best practices for DP-SDG deployment.</p>
-        <div class="tags">
-          <span class="tag tag-blue">Synthetic Data</span>
-          <span class="tag tag-blue">Differential Privacy</span>
-          <span class="tag tag-blue">Privacy Attacks</span>
-        </div>
-        <p class="proj-meta"><strong>IEEE SaTML 2025</strong> · 29% acceptance &nbsp;·&nbsp;
-          <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10992388" target="_blank">Paper →</a>
-        </p>
-      </div>
-
-      <div class="proj-card proj-card--plain">
-        <div class="proj-title">U.S.–U.K. PETs Prize Challenge — Financial Crime Detection</div>
-        <p class="proj-desc">Privacy-enhancing technology solution for federated financial crime detection across multiple banks. Awarded 2nd Prize (Phase 2, Track A) — announced at the White House.</p>
-        <div class="tags">
-          <span class="tag tag-blue">Federated Learning</span>
-          <span class="tag tag-blue">MPC</span>
-          <span class="tag tag-orange">Financial AI</span>
-        </div>
-        <p class="proj-meta">🥈 <strong>2nd Prize</strong> · Announced at the White House · 2023</p>
-      </div>
-
-      <div class="proj-card proj-card--plain">
-        <div class="proj-title">Privacy-Preserving Membership Queries for Federated Anomaly Detection</div>
-        <p class="proj-desc">MPC protocols enabling federated anomaly detection systems to answer membership queries without revealing which data contributed to a detection — with applications in financial fraud.</p>
-        <div class="tags">
-          <span class="tag tag-blue">Federated Learning</span>
-          <span class="tag tag-blue">MPC</span>
-          <span class="tag tag-orange">Financial AI</span>
-        </div>
-        <p class="proj-meta"><strong>PoPETS 2024</strong> · 20% acceptance &nbsp;·&nbsp;
-          <a href="https://petsymposium.org/popets/2024/popets-2024-0074.pdf" target="_blank">Paper →</a>
-        </p>
-      </div>
-
-      <div class="proj-card proj-card--plain">
-        <div class="proj-title">Privacy-Preserving Video Classification with Convolutional Neural Networks</div>
-        <p class="proj-desc">Secure MPC-based framework for video classification where the model is split between client and server, enabling inference without the server ever seeing raw video frames.</p>
-        <div class="tags">
-          <span class="tag tag-blue">MPC</span>
-          <span class="tag tag-blue">Privacy in AI</span>
-          <span class="tag tag-green">Healthcare</span>
-        </div>
-        <p class="proj-meta"><strong>ICML 2021</strong> · 21% acceptance &nbsp;·&nbsp;
-          <a href="https://proceedings.mlr.press/v139/pentyala21a/pentyala21a.pdf" target="_blank">Paper →</a>
-        </p>
-      </div>
-
-      <div class="proj-card proj-card--plain">
-        <div class="proj-title">Privacy-Preserving Group Fairness in Cross-Device Federated Learning</div>
-        <p class="proj-desc">Protocol for auditing group fairness in federated learning without revealing which demographic groups a party's data belongs to, combining MPC with differential privacy.</p>
-        <div class="tags">
-          <span class="tag tag-orange">Group Fairness</span>
-          <span class="tag tag-blue">Federated Learning</span>
-          <span class="tag tag-blue">Differential Privacy</span>
-          <span class="tag tag-blue">MPC</span>
-        </div>
-        <p class="proj-meta"><strong>PMLR 2024</strong> · 16% acceptance &nbsp;·&nbsp;
-          <a href="https://nips.cc/virtual/2022/58464" target="_blank">Paper →</a>
-        </p>
-      </div>
-
-      <div class="proj-card proj-card--plain">
-        <div class="proj-title">iDASH 2021 Genome Analysis Competition</div>
-        <p class="proj-desc">MPC-based solution for privacy-preserving genome-wide association studies (GWAS) on encrypted genomic data. Achieved first place in the international competition.</p>
-        <div class="tags">
-          <span class="tag tag-blue">MPC</span>
-          <span class="tag tag-green">Genomics</span>
-          <span class="tag tag-blue">Privacy in AI</span>
-        </div>
-        <p class="proj-meta">🏆 <strong>1st Place</strong> · iDASH 2021</p>
-      </div>
-
-      <div class="proj-card proj-card--plain">
-        <div class="proj-title">Fair Item Ranking Under User Privacy Constraints</div>
-        <p class="proj-desc">Studied the tension between providing fair ranked lists and preserving user query privacy, proposing methods that achieve fairness without leaking sensitive user preferences.</p>
-        <div class="tags">
-          <span class="tag tag-orange">Group Fairness</span>
-          <span class="tag tag-orange">Algorithmic Recourse</span>
-          <span class="tag tag-blue">Privacy in AI</span>
-        </div>
-        <p class="proj-meta"><strong>ECIR 2023</strong></p>
-      </div>
-
-    </div>
-  </div> -->
-
-  <!-- ── PUBLICATIONS LINK ──────────────────────────────── -->
-  <div class="section-block">
-    <p style="font-size:0.92rem; color:var(--muted);">
-      <i class="fa-solid fa-book-open" style="color:var(--accent);"></i> &nbsp;
-      Publication list — with filter by topic, thumbnails, and workshop/preprint/patent entries —
-      is available on the <a href="publications.html"><strong>Publications page</strong></a>.
-    </p>
-  </div>
-
-</div><!-- /container -->
-
-<footer>
-  Sikha Pentyala &nbsp;·&nbsp;
-  <a href="mailto:sikha@uw.edu">sikha@uw.edu</a> &nbsp;·&nbsp;
-  University of Washington &nbsp;·&nbsp;
-  Last updated: 2025
-</footer>
-
-<script src="main.js"></script>
+<script src="publications.js"></script>
+<script src="news.js"></script>
+<script src="site.js"></script>
 </body>
 </html>
