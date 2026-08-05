@@ -8,6 +8,9 @@
    ============================================================ */
 
 const NEWS = [
+    { date: "Jul 2026",
+    text: "Facilitating tutorial on Responsible AI for AI in Practice Summer Institute at UW eScience Institute" },
+   
   { date: "Jul 2026",
     text: "Joined the UW School of Nursing as a Research Scientist, working on AI based tutoring and responsible-AI micromodules for healthcare professionals." },
 
