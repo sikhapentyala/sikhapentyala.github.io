@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glossary — Responsible AI Literacy for Healthcare Professionals</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:800px;margin:0 auto;padding:2rem 1.5rem;color:#1a1a1a;background:#fff;line-height:1.6}
+h1{font-size:1.4rem;font-weight:600;color:#3C3489;margin-bottom:.25rem}
+.subtitle{font-size:.9rem;color:#666;margin-bottom:1.5rem}
+.filter-row{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.filter-btn{padding:4px 12px;border:1px solid #ccc;border-radius:12px;background:#fff;font-size:.8rem;cursor:pointer;color:#444;transition:all .15s}
+.filter-btn.active,.filter-btn:hover{background:#3C3489;color:#fff;border-color:#3C3489}
+.letter-section{margin-bottom:1.5rem}
+.letter-heading{font-size:1.1rem;font-weight:600;color:#534AB7;border-bottom:2px solid #EEEDFE;padding-bottom:.25rem;margin-bottom:.75rem}
+.term-block{margin-bottom:1rem;padding:.75rem 1rem;border-radius:8px;background:#F8F7FF;border-left:3px solid #534AB7}
+.term-block[data-cat="pipeline"]{border-left-color:#1D9E75;background:#F0FDF6}
+.term-block[data-cat="harm"]{border-left-color:#D85A30;background:#FFF7F4}
+.term-block[data-cat="agentic"]{border-left-color:#534AB7;background:#F8F7FF}
+.term-block[data-cat="trustworthy"]{border-left-color:#185FA5;background:#EFF6FF}
+.term-block[data-cat="general"]{border-left-color:#888;background:#F9F9F9}
+.term-block.hidden{display:none}
+.term{font-weight:600;font-size:.95rem;color:#1a1a1a}
+.cat-badge{display:inline-block;font-size:.7rem;padding:1px 7px;border-radius:10px;margin-left:8px;vertical-align:middle;font-weight:500}
+.cat-pipeline{background:#D1FAE5;color:#065f46}
+.cat-harm{background:#FFEDD5;color:#9a3412}
+.cat-agentic{background:#EDE9FE;color:#4c1d95}
+.cat-trustworthy{background:#DBEAFE;color:#1e3a8a}
+.cat-general{background:#F3F4F6;color:#374151}
+.definition{font-size:.875rem;color:#333;margin-top:.25rem}
+.note{font-size:.8rem;color:#666;margin-top:2rem;padding-top:1rem;border-top:1px solid #eee}
+</style>
+</head>
+<body>
+<h1>Glossary</h1>
+<p class="subtitle">Key terms for Responsible AI Literacy for Healthcare Professionals. Filter by category or browse alphabetically.</p>
+
+<div class="filter-row">
+<button class="filter-btn active" onclick="filter('all',this)">All</button>
+<button class="filter-btn" onclick="filter('pipeline',this)">AI lifecycle</button>
+<button class="filter-btn" onclick="filter('harm',this)">AI risks</button>
+<button class="filter-btn" onclick="filter('agentic',this)">Agentic AI</button>
+<button class="filter-btn" onclick="filter('trustworthy',this)">Trustworthy AI</button>
+<button class="filter-btn" onclick="filter('general',this)">General</button>
+</div>
+
+<div id="glossary"></div>
+
+<p class="note">Terms are drawn from the Responsible AI Literacy for Healthcare Professionals course. Definitions are written for a clinical audience and prioritize practical understanding over technical precision.</p>
+
+<script>
+const terms=[
+{term:"Accountability",cat:"trustworthy",def:"The principle that healthcare professionals remain responsible for clinical decisions made with AI assistance. The note you sign and the action you take belong to you regardless of how AI contributed — clinical accountability cannot be delegated to an algorithm."},
+{term:"Accuracy",cat:"harm",def:"The degree to which an AI system's outputs reflect ground truth. Low accuracy means the model produces incorrect outputs. In clinical AI, accuracy problems may go undetected if evaluation was incomplete or if the model was not tested on patients similar to yours."},
+{term:"Agentic AI",cat:"agentic",def:"AI systems that can independently plan, reason, and take actions — using tools, retrieving information, and completing multi-step tasks with limited human intervention at each step. Unlike passive AI that produces outputs for a clinician to review, agentic AI can act autonomously."},
+{term:"AI lifecycle",cat:"pipeline",def:"The sequence of stages through which an AI system is built, deployed, and maintained: data collection and preparation, model training, evaluation and validation, deployment and clinical use, and monitoring and improvement. Risks can arise, be amplified, or go undetected at any stage."},
+{term:"Automation bias",cat:"general",def:"The tendency to over-rely on AI-generated outputs, accepting them without adequate scrutiny — particularly when under time pressure. Automation bias can cause clinicians to miss errors that they would otherwise catch through independent verification."},
+{term:"Bias",cat:"harm",def:"Systematic differences in AI performance across patient groups, often resulting from underrepresentation in training data or patterns in historical documentation. A model may appear accurate overall while performing significantly worse for specific populations."},
+{term:"Business Associate Agreement (BAA)",cat:"general",def:"A legal contract required under HIPAA between a healthcare organization and a vendor that handles protected health information. Consumer AI tools (e.g., ChatGPT) are not covered by institutional BAAs — entering patient data into these tools creates a privacy risk."},
+{term:"Cascading errors",cat:"agentic",def:"A chain of downstream mistakes triggered by a single error in an agentic AI system. Because agentic systems take multiple actions autonomously, one wrong step can propagate through a workflow before any human has a chance to intervene."},
+{term:"Clinical accountability",cat:"trustworthy",def:"Taking professional responsibility for care decisions — including decisions informed or assisted by AI. Clinicians are accountable for reviewing AI outputs, verifying important information, and making the final clinical judgment."},
+{term:"Data collection and preparation",cat:"pipeline",def:"The first stage of the AI lifecycle, in which developers gather, clean, organize, and label the data the model will learn from. The diversity, quality, and representativeness of this data directly shape what the model can and cannot do reliably."},
+{term:"De-identification",cat:"general",def:"The process of removing or obscuring information that could be used to identify a patient from a dataset or output. De-identification reduces but does not eliminate re-identification risk — especially for rare conditions, small datasets, or outputs that include indirect identifiers."},
+{term:"Deployment and clinical use",cat:"pipeline",def:"The fourth stage of the AI lifecycle, in which the model is integrated into clinical workflows and used by healthcare professionals. This is where AI delivers value — and where hallucinations, robustness failures, and privacy risks become visible to end users."},
+{term:"Distribution shift",cat:"general",def:"A mismatch between the data a model was trained on and the data it encounters during deployment. A model trained on data from one hospital or time period may underperform when deployed in a different clinical environment."},
+{term:"Evaluation and validation",cat:"pipeline",def:"The third stage of the AI lifecycle, in which the trained model is tested before deployment. Rigorous evaluation assesses accuracy and performance across different patient groups and clinical scenarios — identifying bias, robustness, and accuracy problems before the model reaches real patients."},
+{term:"Explainability",cat:"trustworthy",def:"The ability of an AI system to communicate why it produced a particular output. Most clinical AI tools have limited explainability — meaning clinicians cannot always determine what drove a recommendation or summary, and must apply their own judgment to evaluate it."},
+{term:"Fairness",cat:"harm",def:"The property that an AI system performs equitably across different patient populations. An unfair model may produce systematically worse outcomes for patients of certain demographics, diagnoses, or clinical backgrounds."},
+{term:"Faithfulness",cat:"trustworthy",def:"The degree to which an AI system's explanation of its output actually reflects its internal reasoning. An explanation can appear convincing and logical while being unfaithful — not truly reflecting how the model arrived at its conclusion."},
+{term:"Hallucination",cat:"harm",def:"The generation of plausible-sounding but false or fabricated content by an AI system. Hallucination occurs because AI models predict statistically likely text rather than retrieving verified facts. In clinical settings, a hallucinated medication, diagnosis, or finding can directly affect patient care."},
+{term:"Human oversight",cat:"trustworthy",def:"The involvement of human judgment in reviewing, approving, or correcting AI outputs before they affect patient care. As AI systems become more autonomous, maintaining meaningful human oversight becomes more challenging — and more important."},
+{term:"Large Language Model (LLM)",cat:"general",def:"A type of AI system trained on large amounts of text data to generate human-like language. LLMs power many clinical AI tools including ambient scribes, summarization tools, and chatbots. They generate text by predicting what words should come next — not by retrieving verified facts."},
+{term:"Model drift",cat:"pipeline",def:"The gradual degradation of a deployed model's performance over time as the clinical environment, patient population, or documentation practices change. A well-performing model at deployment may become less reliable without ongoing monitoring and revalidation."},
+{term:"Model training",cat:"pipeline",def:"The second stage of the AI lifecycle, in which the model learns patterns from the prepared data. The model identifies relationships between inputs and outputs. Biases in training data can be learned and amplified; the model may also develop robustness limitations if training data lacks diversity."},
+{term:"Monitoring and improvement",cat:"pipeline",def:"The fifth and final stage of the AI lifecycle, in which the deployed model is continuously evaluated and updated. Ongoing monitoring is essential for catching model drift, newly emerging biases, and performance degradation as clinical environments evolve."},
+{term:"Privacy",cat:"harm",def:"The protection of patient information from unauthorized exposure, sharing, or use. AI systems introduce privacy risks through training data memorization, third-party vendor data flows, and inadequate de-identification — often in ways that are invisible to clinicians using the tool."},
+{term:"Retrieval-Augmented Generation (RAG)",cat:"agentic",def:"A technique that combines a language model with a retrieval system — allowing the AI to search for relevant documents or records before generating a response. RAG can reduce hallucination by grounding outputs in actual source material, but does not eliminate it entirely."},
+{term:"Robustness",cat:"harm",def:"The ability of an AI system to perform reliably across a wide range of patients, settings, and conditions — including edge cases and situations not well-represented in training data. Robustness failures often appear with complex, atypical, or high-acuity patients."},
+{term:"Safety",cat:"trustworthy",def:"The property that acting on an AI output will not lead to patient harm. Before acting on any AI-generated output, clinicians should ask: what is the worst case if this is wrong? Verification effort should be calibrated to the stakes of the clinical decision."},
+{term:"System prompt",cat:"general",def:"Instructions set by the platform or institution that shape how an AI chatbot behaves — its tone, constraints, format, and focus areas. System prompts are invisible to users but fundamentally influence every response the chatbot generates."},
+{term:"Training data memorization",cat:"harm",def:"The phenomenon in which an AI model inadvertently memorizes and can reproduce specific details from its training data, including patient information. This is a privacy risk at the training stage of the AI lifecycle."},
+{term:"Transparency",cat:"trustworthy",def:"The property that users are informed about how an AI system was developed, evaluated, and intended to be used — including its known limitations and appropriate use cases. Transparency allows clinicians to make informed decisions about when to trust and when to question an AI tool."},
+{term:"User prompt",cat:"general",def:"The text a user types into an AI chatbot or tool. The user prompt works within the constraints set by the system prompt and shapes the response generated by the model. Well-constructed prompts — with clear role, context, task, and format — produce more useful and safer outputs."},
+{term:"Verification",cat:"general",def:"The practice of checking AI-generated outputs against source records before acting on them. Core verification habits include: tracing high-stakes claims to their source, prioritizing medications and diagnoses, comparing the output against clinical judgment, flagging discrepancies, and never signing without reading."}
+];
+
+const letters={};
+terms.sort((a,b)=>a.term.localeCompare(b.term)).forEach(t=>{
+  const l=t.term[0].toUpperCase();
+  if(!letters[l])letters[l]=[];
+  letters[l].push(t);
+});
+
+let activeFilter='all';
+
+function render(){
+  const gl=document.getElementById('glossary');
+  gl.innerHTML='';
+  Object.keys(letters).sort().forEach(l=>{
+    const filtered=letters[l].filter(t=>activeFilter==='all'||t.cat===activeFilter);
+    if(!filtered.length)return;
+    const sec=document.createElement('div');
+    sec.className='letter-section';
+    sec.innerHTML=`<div class="letter-heading">${l}</div>`;
+    filtered.forEach(t=>{
+      const b=document.createElement('div');
+      b.className=`term-block`;
+      b.setAttribute('data-cat',t.cat);
+      const badge=`<span class="cat-badge cat-${t.cat}">${{pipeline:'AI lifecycle',harm:'AI risk',agentic:'Agentic AI',trustworthy:'Trustworthy AI',general:'General'}[t.cat]}</span>`;
+      b.innerHTML=`<div class="term">${t.term}${badge}</div><div class="definition">${t.def}</div>`;
+      sec.appendChild(b);
+    });
+    gl.appendChild(sec);
+  });
+}
+
+function filter(cat,btn){
+  activeFilter=cat;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  render();
+}
+
+render();
+</script>
+</body>
+</html>

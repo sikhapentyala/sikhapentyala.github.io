@@ -1,0 +1,169 @@
+
+<style>
+h2.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+.wrap{padding:1rem 0;font-family:var(--font-sans)}
+.intro{background:var(--surface-1);border:0.5px solid var(--border);border-radius:12px;padding:1rem 1.25rem;margin-bottom:1.5rem;font-size:14px;color:var(--text-primary);line-height:1.6}
+.intro strong{font-weight:500}
+.reflect{margin-top:.75rem;padding-top:.75rem;border-top:0.5px solid var(--border);font-size:13px;color:var(--text-secondary)}
+.reflect ul{margin:.5rem 0 0 1rem;padding:0}
+.reflect li{margin-bottom:3px}
+.pipeline{display:flex;align-items:center;gap:0;margin-bottom:1.5rem;flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}
+.stage-btn{flex:1;min-width:90px;border:none;background:none;padding:0;cursor:pointer}
+.stage-box{padding:10px 6px;border-radius:10px;border:2px solid transparent;text-align:center;font-size:12px;font-weight:500;line-height:1.3;transition:all .2s;min-height:56px;display:flex;align-items:center;justify-content:center}
+.s1 .stage-box{background:#DBEAFE;color:#1e3a5f;border-color:#DBEAFE}
+.s2 .stage-box{background:#FEF3C7;color:#78350f;border-color:#FEF3C7}
+.s3 .stage-box{background:#D1FAE5;color:#064e3b;border-color:#D1FAE5}
+.s4 .stage-box{background:#E0E7FF;color:#1e1b4b;border-color:#E0E7FF}
+.s5 .stage-box{background:#F3E8FF;color:#4c1d95;border-color:#F3E8FF}
+.s1.active .stage-box{border-color:#2563EB;box-shadow:0 0 0 2px #BFDBFE}
+.s2.active .stage-box{border-color:#D97706;box-shadow:0 0 0 2px #FDE68A}
+.s3.active .stage-box{border-color:#059669;box-shadow:0 0 0 2px #A7F3D0}
+.s4.active .stage-box{border-color:#4F46E5;box-shadow:0 0 0 2px #C7D2FE}
+.s5.active .stage-box{border-color:#7C3AED;box-shadow:0 0 0 2px #DDD6FE}
+.s1.faded .stage-box,.s2.faded .stage-box,.s3.faded .stage-box,.s4.faded .stage-box,.s5.faded .stage-box{opacity:.35}
+.arrow{color:var(--text-muted);font-size:16px;padding:0 2px;flex-shrink:0;align-self:center;margin-bottom:4px}
+.panel{background:var(--surface-1);border:0.5px solid var(--border);border-radius:12px;padding:1.25rem;min-height:200px}
+.panel-title{font-size:16px;font-weight:500;color:var(--text-primary);margin-bottom:2px}
+.panel-oneliner{font-size:13px;color:var(--text-secondary);margin-bottom:1rem;font-style:italic}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.col-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.col-label.well{color:#059669}
+.col-label.risks{color:#DC2626}
+.kw{font-size:13px;color:var(--text-primary);padding:3px 0;border-bottom:0.5px solid var(--border);line-height:1.4}
+.kw:last-child{border-bottom:none}
+.fr-section{margin-top:1rem;border-top:0.5px solid var(--border);padding-top:1rem}
+.fr-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:#7C3AED;margin-bottom:.75rem}
+.think-btn{width:100%;padding:8px 16px;border:0.5px solid var(--border-strong);border-radius:var(--radius);background:var(--surface-2);font-size:13px;color:var(--text-primary);cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px}
+.think-btn:hover{background:var(--surface-1)}
+.timer{font-size:13px;font-weight:500;color:#7C3AED;margin-left:auto}
+.fr-content{display:none}
+.fr-item{margin-bottom:.75rem}
+.fr-q{font-size:12px;font-weight:500;color:var(--text-secondary);margin-bottom:4px}
+.fr-a{font-size:13px;color:var(--text-primary);line-height:1.5}
+.empty{text-align:center;padding:2rem 1rem;color:var(--text-muted);font-size:14px}
+</style>
+
+<div class="wrap">
+<h2 class="sr-only">Interactive AI lifecycle explorer — click each stage to learn what happens and apply to the inpatient risk of falls model</h2>
+
+<div class="intro">
+  <p>For each stage, you will see: <strong>what happens</strong>, <strong>what AI does well</strong>, and <strong>what risks can arise.</strong></p>
+  <p style="margin:.5rem 0 0">Then apply what you have learned to a clinical example: an AI tool for the <strong>Inpatient Risk of Falls Predictive Model</strong>. It analyzes patient data — including vitals, medications, diagnoses, and nursing assessments — to generate a fall risk score used alongside clinical judgment to identify patients at high risk of falling.</p>
+  <div class="reflect">For each stage, reflect on:
+    <ul>
+      <li>What type of data is likely collected or used for this model?</li>
+      <li>What evaluation metrics would matter for a fall risk prediction tool?</li>
+      <li>What specific risks could affect how well this model works for your patients?</li>
+      <li>What would make this model more reliable or trustworthy?</li>
+    </ul>
+  </div>
+</div>
+
+<div class="pipeline" id="pipeline"></div>
+<div class="panel" id="panel"><div class="empty">Select a stage above to begin</div></div>
+</div>
+
+<script>
+const stages=[
+  {id:"s1",label:"Data Collection\nand\nPreparation",title:"Stage 1 — Data collection and preparation",oneliner:"Gathering and organizing the data AI will learn from",well:["Diverse data → better performance across patients","Large datasets → pattern detection at scale","Representative data → reliable across clinical settings"],risks:["Bias — unrepresentative patient populations","Privacy — patient data exposure","Data quality — garbage in, garbage out"],fr:{q1:"What data is collected?",a1:"Historical patient records including falls history, vitals, medications, diagnoses, nursing assessments, and demographic data from prior admissions.",q2:"Key considerations",a2:"Which hospitals and units contributed data? Were patients of all ages, mobility levels, and diagnoses represented? Was data from community hospitals included alongside academic centers?",q3:"Risks at this stage",a3:"Bias — if fall data came mostly from certain units or patient populations, the model may not generalize. Privacy — patient records must be de-identified and handled under HIPAA throughout."}},
+  {id:"s2",label:"Model\nTraining",title:"Stage 2 — Model training",oneliner:"The AI learns patterns from the prepared data",well:["Detects complex correlations across thousands of cases","Identifies subtle fall risk signals faster than manual review","Learns from far more historical cases than any single clinician"],risks:["Bias — learned and amplified from training data","Hallucination — statistical prediction, not verified fact","Robustness — may not generalize to new patient types","Privacy — training data memorization"],fr:{q1:"What happens during training?",a1:"The model learns which combinations of patient data — vitals, medications, diagnoses, prior fall history — are statistically associated with falls during admission.",q2:"Key considerations",a2:"If certain patient groups (e.g., patients with cognitive impairment, non-English speakers) were underrepresented in training data, the model may predict fall risk less accurately for them.",q3:"Risks at this stage",a3:"Bias may be learned from historical documentation patterns. The model predicts statistically — it does not 'know' a patient will fall; it estimates probability based on patterns."}},
+  {id:"s3",label:"Evaluation\nand\nValidation",title:"Stage 3 — Evaluation and validation",oneliner:"Testing the model before it reaches real patients",well:["Catches errors before deployment","Builds confidence in model performance","Identifies gaps in performance across patient groups"],risks:["Accuracy — problems missed if evaluation incomplete","Bias — may perform poorly for specific subgroups","Robustness — untested on edge cases or rare presentations"],fr:{q1:"What evaluation metrics matter?",a1:"Sensitivity (does it catch most patients who will fall?), specificity (does it avoid over-flagging patients who won't fall?), and performance across patient subgroups — age, diagnosis, unit type.",q2:"Key considerations",a2:"Was the model validated on patients from the same type of unit where you work? A model validated in an ICU may perform differently on a medical-surgical floor.",q3:"Risks at this stage",a3:"If evaluation only measured overall accuracy, the model may appear reliable while performing poorly for specific patient groups — elderly patients with cognitive impairment, for example."}},
+  {id:"s4",label:"Deployment",title:"Stage 4 — Deployment and clinical use",oneliner:"The AI enters clinical workflows and interacts with nurses directly",well:["Fall risk score visible at admission and throughout stay","Reduces time spent on manual risk calculation","Surfaces risk signals that may be missed in busy handoffs"],risks:["Hallucination — score may not reflect actual patient risk","Robustness — struggles with complex or atypical patients","Privacy — data flows through EHR and vendor systems","Transparency — do you know how the score was generated?","Explainability — can it tell you why this patient is high risk?"],fr:{q1:"How does this appear in clinical use?",a1:"In Epic, the Inpatient Risk of Falls score appears in the patient's Risk Assessment section. Nurses see a score and a risk level — but typically not the specific factors that drove it.",q2:"Key considerations",a2:"Automation bias is a real risk here — if the score says 'low risk' but your clinical judgment says otherwise, your judgment should take precedence. The score is a tool, not a decision.",q3:"Risks at this stage",a3:"Transparency: do you know what data drove today's score? Explainability: can the system tell you why? Most cannot — meaning the burden of interpretation falls on the nurse using it."}},
+  {id:"s5",label:"Monitoring\nand\nImprovement",title:"Stage 5 — Monitoring and improvement",oneliner:"Ongoing oversight to keep the model reliable over time",well:["Catches model drift as patient populations change","Improves reliability through continuous performance review","Shared responsibility between developers, informaticians, and clinicians"],risks:["Drift — model degrades as clinical environments evolve","Bias — new disparities may emerge over time","Privacy — ongoing data handling obligations","Shared responsibility — who monitors, and how often?"],fr:{q1:"What monitoring matters?",a1:"Tracking whether fall rates change after implementation, whether the model's sensitivity and specificity remain stable, and whether performance differs across patient populations over time.",q2:"Key considerations",a2:"Clinical practice changes — new medications, new patient populations, new documentation practices. A model validated in 2022 may not perform the same way in 2026 without revalidation.",q3:"Risks at this stage",a3:"Model drift is invisible until something goes wrong. Shared responsibility means developers, clinical informatics, and nurses who use the tool all have a role in flagging when performance seems off."}}
+];
+
+let current=null;
+let timers={};
+let revealed={};
+
+function renderPipeline(){
+  const el=document.getElementById('pipeline');
+  el.innerHTML='';
+  stages.forEach((s,i)=>{
+    const btn=document.createElement('button');
+    btn.className=`stage-btn ${s.id}${current===s.id?' active':current?' faded':''}`;
+    btn.setAttribute('aria-pressed',current===s.id);
+    btn.onclick=()=>select(s.id);
+    btn.innerHTML=`<div class="stage-box">${s.label.replace(/\n/g,'<br>')}</div>`;
+    el.appendChild(btn);
+    if(i<stages.length-1){
+      const arr=document.createElement('div');
+      arr.className='arrow';
+      arr.textContent='→';
+      el.appendChild(arr);
+    }
+  });
+}
+
+function select(id){
+  current=id;
+  renderPipeline();
+  renderPanel();
+}
+
+function renderPanel(){
+  const s=stages.find(x=>x.id===current);
+  if(!s){document.getElementById('panel').innerHTML='<div class="empty">Select a stage above to begin</div>';return;}
+  const isRevealed=revealed[s.id];
+  const timeLeft=timers[s.id];
+
+  let wellHtml=s.well.map(w=>`<div class="kw">${w}</div>`).join('');
+  let riskHtml=s.risks.map(r=>`<div class="kw">${r}</div>`).join('');
+
+  let frHtml=`<div class="fr-section">
+    <div class="fr-label"><i class="ti ti-leaf" aria-hidden="true"></i> Apply to inpatient risk of falls</div>`;
+
+  if(isRevealed){
+    frHtml+=`<div class="fr-content" id="fr-${s.id}" style="display:block">
+      <div class="fr-item"><div class="fr-q">${s.fr.q1}</div><div class="fr-a">${s.fr.a1}</div></div>
+      <div class="fr-item"><div class="fr-q">${s.fr.q2}</div><div class="fr-a">${s.fr.a2}</div></div>
+      <div class="fr-item"><div class="fr-q">${s.fr.q3}</div><div class="fr-a">${s.fr.a3}</div></div>
+    </div>`;
+  } else {
+    const secs=timeLeft||5;
+    frHtml+=`<button class="think-btn" id="think-btn-${s.id}" onclick="startTimer('${s.id}')">
+      <i class="ti ti-brain" aria-hidden="true"></i>
+      I've reflected — show me
+      <span class="timer" id="timer-${s.id}" style="display:none">Wait ${secs}s</span>
+    </button>`;
+  }
+  frHtml+=`</div>`;
+
+  document.getElementById('panel').innerHTML=`
+    <div class="panel-title">${s.title}</div>
+    <div class="panel-oneliner">${s.oneliner}</div>
+    <div class="two-col">
+      <div>
+        <div class="col-label well"><i class="ti ti-circle-check" aria-hidden="true"></i> What it does well</div>
+        ${wellHtml}
+      </div>
+      <div>
+        <div class="col-label risks"><i class="ti ti-alert-triangle" aria-hidden="true"></i> Risks</div>
+        ${riskHtml}
+      </div>
+    </div>
+    ${frHtml}`;
+}
+
+function startTimer(id){
+  const btn=document.getElementById(`think-btn-${id}`);
+  const timerEl=document.getElementById(`timer-${id}`);
+  if(!btn||!timerEl)return;
+  btn.disabled=true;
+  timerEl.style.display='inline';
+  let secs=5;
+  timerEl.textContent=`Wait ${secs}s`;
+  const iv=setInterval(()=>{
+    secs--;
+    if(secs<=0){
+      clearInterval(iv);
+      revealed[id]=true;
+      renderPanel();
+    } else {
+      timerEl.textContent=`Wait ${secs}s`;
+    }
+  },1000);
+}
+
+renderPipeline();
+</script>

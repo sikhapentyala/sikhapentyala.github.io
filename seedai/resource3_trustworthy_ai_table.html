@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landscape of Trustworthy AI</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:900px;margin:0 auto;padding:2rem 1.5rem;color:#1a1a1a;background:#fff;line-height:1.6}
+h1{font-size:1.4rem;font-weight:600;color:#3C3489;margin-bottom:.25rem}
+.subtitle{font-size:.9rem;color:#666;margin-bottom:2rem}
+table{width:100%;border-collapse:collapse;font-size:.875rem}
+thead tr{background:#3C3489;color:#fff}
+thead th{padding:.75rem 1rem;text-align:left;font-weight:500;font-size:.8rem;letter-spacing:.04em}
+tbody tr:nth-child(even){background:#F8F7FF}
+tbody tr:hover{background:#EEEDFE}
+td{padding:.75rem 1rem;border-bottom:1px solid #E5E4F0;vertical-align:top}
+td:first-child{font-weight:500}
+.cluster{background:#534AB7;color:#fff;font-size:.75rem;font-weight:500;padding:2px 8px;border-radius:12px;display:inline-block;margin-bottom:4px}
+.cluster.understand{background:#1D9E75}
+.cluster.act{background:#D85A30}
+.q{font-style:italic;color:#444;font-size:.85rem}
+.note{font-size:.8rem;color:#666;margin-top:2rem;padding-top:1rem;border-top:1px solid #eee}
+</style>
+</head>
+<body>
+<h1>Landscape of Trustworthy AI</h1>
+<p class="subtitle">Eight properties that define responsible and trustworthy AI use in clinical practice. The first four relate to understanding how AI can fail; the last four relate to how clinicians evaluate and act on AI outputs.</p>
+
+<table>
+<thead>
+<tr>
+<th style="width:20%">Property</th>
+<th style="width:45%">Clinician-facing question</th>
+<th style="width:35%">What this means in practice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="cluster understand">Understand</span><br>Bias and fairness</td>
+<td class="q">Does the AI perform differently for certain patients or groups?</td>
+<td>Check whether the tool was evaluated across different patient demographics — age, race, sex, diagnosis. High overall accuracy can mask poor performance for specific subgroups.</td>
+</tr>
+<tr>
+<td><span class="cluster understand">Understand</span><br>Accuracy and hallucination</td>
+<td class="q">Can the AI generate incorrect or fabricated information with confidence?</td>
+<td>AI systems predict plausible text — they do not retrieve verified facts. Any AI-generated clinical detail should be traced back to the source record before being acted on.</td>
+</tr>
+<tr>
+<td><span class="cluster understand">Understand</span><br>Privacy and confidentiality</td>
+<td class="q">Could patient information be exposed or used inappropriately?</td>
+<td>Understand where patient data goes when you use an AI tool — vendor servers, data retention policies, and whether data is used to train future models. Consumer AI tools are not covered by institutional data agreements.</td>
+</tr>
+<tr>
+<td><span class="cluster understand">Understand</span><br>Robustness</td>
+<td class="q">Does the AI continue to perform well with unusual patients, edge cases, or new settings?</td>
+<td>A model validated at one institution or time period may degrade in your setting. Complex, atypical patients are often where robustness failures appear — and where accurate AI output matters most.</td>
+</tr>
+<tr>
+<td><span class="cluster act">Act responsibly</span><br>Transparency</td>
+<td class="q">Are users informed about how the AI was developed, evaluated, and intended to be used?</td>
+<td>Before using a tool, ask: was it validated on patients like mine? What data was it trained on? What are its known limitations? This information should be available from your institution or the vendor.</td>
+</tr>
+<tr>
+<td><span class="cluster act">Act responsibly</span><br>Explainability and faithfulness</td>
+<td class="q">Can users understand why the AI produced a recommendation or summary?</td>
+<td>Most clinical AI tools cannot fully explain their outputs. When source references are provided, verify that they actually support the AI's conclusions — explanations can appear convincing without faithfully reflecting the model's reasoning.</td>
+</tr>
+<tr>
+<td><span class="cluster act">Act responsibly</span><br>Accountability and human oversight</td>
+<td class="q">Who is responsible for reviewing AI outputs and making the final clinical decision?</td>
+<td>Clinical accountability cannot be delegated to an algorithm. The note you sign, the decision you make — these belong to you regardless of how the AI contributed. Human oversight is non-negotiable.</td>
+</tr>
+<tr>
+<td><span class="cluster act">Act responsibly</span><br>Safety</td>
+<td class="q">Could acting on the AI's output lead to patient harm, and how can that risk be reduced?</td>
+<td>Before acting on any AI output, ask: what is the worst case if this is wrong? Calibrate your verification effort to the stakes — high-stakes outputs require more scrutiny before you act.</td>
+</tr>
+</tbody>
+</table>
+
+<p class="note">The first four properties relate to understanding AI risks — covered in Module 1. The last four relate to using AI responsibly — covered in Module 2. Together they provide a framework for critically evaluating any AI tool you encounter in clinical practice.</p>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Common AI-Related Risks in Clinical Settings</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:900px;margin:0 auto;padding:2rem 1.5rem;color:#1a1a1a;background:#fff;line-height:1.6}
+h1{font-size:1.4rem;font-weight:600;color:#3C3489;margin-bottom:.25rem}
+.subtitle{font-size:.9rem;color:#666;margin-bottom:2rem}
+table{width:100%;border-collapse:collapse;font-size:.875rem}
+thead tr{background:#3C3489;color:#fff}
+thead th{padding:.75rem 1rem;text-align:left;font-weight:500;font-size:.8rem;letter-spacing:.04em}
+tbody tr:nth-child(even){background:#F8F7FF}
+tbody tr:hover{background:#EEEDFE}
+td{padding:.75rem 1rem;border-bottom:1px solid #E5E4F0;vertical-align:top}
+td:first-child{font-weight:500;white-space:nowrap}
+.stage-pill{display:inline-block;background:#EEEDFE;color:#3C3489;font-size:.75rem;padding:2px 8px;border-radius:12px;margin:2px 2px 2px 0;white-space:nowrap}
+.risk-name{color:#1a1a1a}
+.note{font-size:.8rem;color:#666;margin-top:2rem;padding-top:1rem;border-top:1px solid #eee}
+</style>
+</head>
+<body>
+<h1>Common AI-Related Risks in Clinical Settings</h1>
+<p class="subtitle">Understanding where these risks arise helps clinicians recognize why AI systems sometimes fail and how to use them responsibly.</p>
+
+<table>
+<thead>
+<tr>
+<th style="width:15%">Risk</th>
+<th style="width:30%">What it means</th>
+<th style="width:30%">Why it matters clinically</th>
+<th style="width:25%">Where it arises in the AI lifecycle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="risk-name">Bias and fairness</td>
+<td>The AI performs differently for certain patients or groups — producing less accurate or less equitable outputs for underrepresented populations.</td>
+<td>A biased model may systematically underperform for patients of certain ages, races, sexes, or clinical backgrounds — leading to inequitable care recommendations or missed findings.</td>
+<td>
+<span class="stage-pill">Data collection</span>
+<span class="stage-pill">Model training</span>
+<span class="stage-pill">Evaluation</span>
+<span class="stage-pill">Monitoring</span>
+</td>
+</tr>
+<tr>
+<td class="risk-name">Accuracy and hallucination</td>
+<td>The AI generates incorrect or fabricated information — producing outputs that sound plausible and confident but are not grounded in fact or the patient record.</td>
+<td>A hallucinated medication, diagnosis, or clinical detail in an AI-generated summary or note can directly affect patient care if acted on without verification.</td>
+<td>
+<span class="stage-pill">Model training</span>
+<span class="stage-pill">Evaluation</span>
+<span class="stage-pill">Deployment</span>
+</td>
+</tr>
+<tr>
+<td class="risk-name">Privacy and confidentiality</td>
+<td>Patient information is exposed, shared, or used in ways that were not authorized — including through inadequate de-identification, third-party data flows, or training data memorization.</td>
+<td>Patient data used to train or run AI systems may be retained by vendors, used to train future models, or exposed through model outputs — often without patients' knowledge or consent.</td>
+<td>
+<span class="stage-pill">Data collection</span>
+<span class="stage-pill">Model training</span>
+<span class="stage-pill">Deployment</span>
+<span class="stage-pill">Monitoring</span>
+</td>
+</tr>
+<tr>
+<td class="risk-name">Robustness</td>
+<td>The AI fails to perform reliably when encountering unusual patients, edge cases, or clinical settings different from those it was trained and validated on.</td>
+<td>A model that performs well on average may produce incomplete, inaccurate, or dangerously inadequate outputs for complex, atypical, or high-acuity patients — precisely those who need the most reliable information.</td>
+<td>
+<span class="stage-pill">Model training</span>
+<span class="stage-pill">Evaluation</span>
+<span class="stage-pill">Deployment</span>
+<span class="stage-pill">Monitoring</span>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="note">These risks are interconnected — they can emerge, be amplified, or go undetected across multiple stages of the AI lifecycle. Understanding where they originate helps clinicians recognize why AI sometimes fails and what questions to ask before acting on AI-generated outputs.</p>
+</body>
+</html>
