@@ -23,7 +23,7 @@ const FOOTER = `Sikha Pentyala &middot;
   <a href="mailto:sikha@uw.edu">sikha@uw.edu</a> &middot;
   University of Washington Tacoma`;
 
-const NEWS_ON_HOME = 6;   // how many news items the home page shows
+const NEWS_ON_HOME = 8;   // how many news items the home page shows
 
 
 /* ============================================================
