@@ -8,6 +8,10 @@
    ============================================================ */
 
 const NEWS = [
+
+  { date: "Aug 2026",
+    text: "Accepted to the 2026 NSF SaTC Aspiring PIs Workshop" },
+   
     { date: "Jul 2026",
     text: "Facilitating tutorial on Responsible AI for AI in Practice Summer Institute at UW eScience Institute" },
    
@@ -17,9 +21,6 @@ const NEWS = [
   { date: "Jul 2026",
     text: "Our team won 1st place in the red-teaming track of the CAMDA 2026 Health Privacy Challenge." },
 
-  { date: "Apr-May 2026",
-    text: "1 paper (<20\% acceptance rate) and 1 Poster accepted for proceedings at ACM BCB 2026, 1 paper accepted for proceedings and 1 abstract accepted for oral at RECOMB-Privacy 2026" },
-
   { date: "Apr 2026",
     text: "Invited talk, <em>Illuminating Dark Data: Privacy-Preserving AI in Distributed Data Silos</em>, at the University of Central Florida." },
 
@@ -28,5 +29,8 @@ const NEWS = [
 
   { date: "Mar 2026",
     text: "Invited talk on privacy-preserving genomics data sharing at the NAIRR Annual Meeting, Arlington, VA." },
+
+   { date: "Apr-May 2026",
+    text: "1 paper (<20\% acceptance rate) and 1 Poster accepted for proceedings at ACM BCB 2026, 1 paper accepted for proceedings and 1 abstract accepted for oral at RECOMB-Privacy 2026" },
 
 ];
