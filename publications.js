@@ -39,7 +39,15 @@ const AREAS = [
 const PUBLICATIONS = [
 
   /* ---------------------------- 2026 ---------------------------- */
-  {
+    {
+    title: "Membership Inference on Synthetic Single-Cell Genomic Data",
+    authors: "S. Golob, P. McKeever, S. Pentyala, M. De Cock, J. Peck",
+    venue: "NeurIPS", year: 2026, kind: "conference",
+    areas: ["synthetic", "auditing", "privacy"],
+    featured: ["trustworthy"],
+    note: "26% acceptance",
+  },
+   {
     title: "SoK: Reconstruction Attacks on Synthetic Tabular Data (Insights from Winning the NIST CRC)",
     authors: "S. Golob, S. Pentyala, M. De Cock",
     venue: "PoPETs", year: 2026, kind: "conference",
