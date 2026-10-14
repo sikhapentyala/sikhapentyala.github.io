@@ -39,7 +39,32 @@ const AREAS = [
 const PUBLICATIONS = [
 
   /* ---------------------------- 2026 ---------------------------- */
+
+  {
+    title: "Portable Causal Fairness Across Synthetic Data Generator Families",
+    authors: "S. Golob,  S. Pentyala, M. De Cock,",
+    venue: "AI4GOOD Workshop @ NeurIPS", year: 2026, kind: "workshop",
+    areas: ["fairness", "auditing", "privacy"],
+    featured: ["trustworthy", "fairness", "aiforgood"],
+  },
+
     {
+    title: "Membership Inference Attack on Private Evolution",
+    authors: "D. Filienko,  S. Pentyala, M. De Cock,",
+    venue: "Beyond Private Training: The New Landscape of AI Privacy (InfPriv) @ NeurIPS", year: 2026, kind: "workshop",
+    areas: ["synthetic", "auditing", "privacy"],
+    featured: ["trustworthy"],
+  },
+
+  {
+    title: "Federated Generation of Synthetic RNA-seq Data",
+    authors: "D. Filienko, M. De Cock, S. Pentyala",
+    venue: "Journal of Coputational Biology", year: 2026, kind: "journal",
+    areas: ["synthetic", "privacy", "aiforgood"],
+    featured: ["sdg"], selected: true,
+  },
+
+  {
     title: "Membership Inference on Synthetic Single-Cell Genomic Data",
     authors: "S. Golob, P. McKeever, S. Pentyala, M. De Cock, J. Peck",
     venue: "NeurIPS", year: 2026, kind: "conference",
@@ -47,7 +72,7 @@ const PUBLICATIONS = [
     featured: ["trustworthy"],
     note: "26% acceptance",
   },
-   {
+  {
     title: "SoK: Reconstruction Attacks on Synthetic Tabular Data (Insights from Winning the NIST CRC)",
     authors: "S. Golob, S. Pentyala, M. De Cock",
     venue: "PoPETs", year: 2026, kind: "conference",
@@ -57,7 +82,7 @@ const PUBLICATIONS = [
   },
   {
     title: "FHAIM: Fully Homomorphic AIM for Private Synthetic Data Generation",
-    authors: "M. Kumar*, Q. Lou, P. Barreto, M. De Cock, S. Pentyala",
+    authors: "M. Kumar, Q. Lou, P. Barreto, M. De Cock, S. Pentyala",
     venue: "ICML", year: 2026, kind: "conference",
     areas: ["synthetic", "privacy"],
     featured: ["sdg"],
@@ -65,7 +90,7 @@ const PUBLICATIONS = [
   },
   {
     title: "Federated Synthetic Data Generation for Hepatology Research: A UNOS-based Evaluation",
-    authors: "S. Pentyala, A. Babu*, J. Ahn, M. De Cock",
+    authors: "S. Pentyala, A. Babu, J. Ahn, M. De Cock",
     venue: "ACM BCB", year: 2026, kind: "conference",
     areas: ["synthetic", "privacy", "aiforgood"],
   },
@@ -89,7 +114,7 @@ const PUBLICATIONS = [
     authors: "D. Filienko, M. De Cock, S. Pentyala",
     venue: "RECOMB Privacy", year: 2026, kind: "conference",
     areas: ["synthetic", "privacy", "aiforgood"],
-    featured: ["sdg"], selected: true,
+    featured: ["sdg"], selected: false,
   },
   {
     title: "Auditing Patient Privacy Risk in Synthetic Rare Disease Germline Data",

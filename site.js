@@ -23,7 +23,10 @@ const FOOTER = `Sikha Pentyala &middot;
   <a href="mailto:sikha@uw.edu">sikha@uw.edu</a> &middot;
   University of Washington Tacoma`;
 
-const NEWS_ON_HOME = 8;   // how many news items the home page shows
+/* How many news items show before the "+ N more" link. Nothing is ever
+   cut off: the rest are one click away, and the link disappears when the
+   list is shorter than this. */
+const NEWS_COLLAPSED = 6;
 
 
 /* ============================================================
@@ -152,9 +155,22 @@ function renderThemePubs() {
 function renderNews() {
   const el = document.getElementById("news");
   if (!el) return;
-  el.innerHTML = `<ul class="news-list">${NEWS.slice(0, NEWS_ON_HOME).map(n =>
-    `<li><span class="news-date">${n.date}</span><span class="news-text">${n.text}</span></li>`
-  ).join("")}</ul>`;
+
+  const draw = expanded => {
+    const items  = expanded ? NEWS : NEWS.slice(0, NEWS_COLLAPSED);
+    const hidden = NEWS.length - NEWS_COLLAPSED;
+    const toggle = hidden > 0
+      ? `<button class="news-toggle">${expanded ? "Show less" : `+ ${hidden} more`}</button>`
+      : "";
+    el.innerHTML = `<ul class="news-list">${items.map(n =>
+      `<li><span class="news-date">${n.date}</span><span class="news-text">${n.text}</span></li>`
+    ).join("")}</ul>${toggle}`;
+
+    const btn = el.querySelector(".news-toggle");
+    if (btn) btn.addEventListener("click", () => draw(!expanded));
+  };
+
+  draw(false);
 }
 
 
