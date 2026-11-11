@@ -47,7 +47,8 @@ const PUBLICATIONS = [
     authors: "D. Filienko, A. Bagalkotkar, X. Vongsathorn, S. Pentyala",
     venue: "arXiv", year: 2026, kind: "preprint",
     areas: ["privacy"],
-    featured: ["context"], hidden: true,
+    featured: ["context"],
+    hidden: true,
     url: "https://arxiv.org/abs/2611.08884",
   },
 
@@ -56,7 +57,7 @@ const PUBLICATIONS = [
     authors: "S. Golob,  S. Pentyala, M. De Cock,",
     venue: "AI4GOOD Workshop @ NeurIPS", year: 2026, kind: "workshop",
     areas: ["fairness", "auditing", "privacy"],
-    featured: ["trustworthy", "fairness", "aiforgood"],
+    featured: ["aiforgood"],
   },
 
     {
@@ -70,9 +71,10 @@ const PUBLICATIONS = [
   {
     title: "Federated Generation of Synthetic RNA-seq Data",
     authors: "D. Filienko, M. De Cock, S. Pentyala",
-    venue: "Journal of Coputational Biology", year: 2026, kind: "journal",
+    venue: "Journal of Computational Biology", year: 2026, kind: "journal",
     areas: ["synthetic", "privacy", "aiforgood"],
-    featured: ["sdg"], selected: true,
+    featured: ["sdg"],
+    selected: true,
   },
 
   {
@@ -80,7 +82,6 @@ const PUBLICATIONS = [
     authors: "S. Golob, P. McKeever, S. Pentyala, M. De Cock, J. Peck",
     venue: "NeurIPS", year: 2026, kind: "conference",
     areas: ["synthetic", "auditing", "privacy"],
-    featured: ["trustworthy"],
     note: "26% acceptance",
   },
   {
@@ -104,13 +105,14 @@ const PUBLICATIONS = [
     authors: "S. Pentyala, A. Babu, J. Ahn, M. De Cock",
     venue: "ACM BCB", year: 2026, kind: "conference",
     areas: ["synthetic", "privacy", "aiforgood"],
+    featured: ["aiforgood"],
   },
   {
     title: "Synthetic Germline VCF Generation for Rare Diseases: Case Study in NF1",
     authors: "S. Pentyala, Z. Pan, P.J. McKeever, J. Banerjee, L. Foschini, M. De Cock",
     venue: "ACM BCB", year: 2026, kind: "conference",
     areas: ["synthetic", "aiforgood"],
-    featured: ["aiforgood"],
+    featured: ["sdg"],
   },
   {
     title: "Designing Structured Conversational Support for Tuberculosis Treatment Adherence and Patient Coping",
@@ -125,14 +127,15 @@ const PUBLICATIONS = [
     authors: "D. Filienko, M. De Cock, S. Pentyala",
     venue: "RECOMB Privacy", year: 2026, kind: "conference",
     areas: ["synthetic", "privacy", "aiforgood"],
-    featured: ["sdg"], selected: false,
+    selected: false,
   },
   {
     title: "Auditing Patient Privacy Risk in Synthetic Rare Disease Germline Data",
     authors: "S. Pentyala, Z. Pan, L. Foschini, M. De Cock, J. Banerjee",
     venue: "RECOMB Privacy", year: 2026, kind: "workshop",
     areas: ["synthetic", "auditing", "aiforgood"],
-    featured: ["trustworthy"], selected: true,
+    featured: ["trustworthy"],
+    selected: true,
   },
   {
     title: "Privacy-Preserving Genomics Data Sharing on the NAIRR",
@@ -145,6 +148,7 @@ const PUBLICATIONS = [
     authors: "D. Filienko, E.C. Neto, S. Pentyala, J. Banerjee, L. Foschini, M. De Cock",
     venue: "ISMB/ECCB", year: 2026, kind: "workshop",
     areas: ["synthetic", "aiforgood"],
+    featured: ["sdg"],
   },
   {
     title: "Does Synthetic Bulk RNA-seq Data Protect Donors? Privacy Auditing through Membership Inference Attacks",
@@ -264,7 +268,7 @@ const PUBLICATIONS = [
     authors: "J.A. Sun, S. Pentyala, M. De Cock, G. Farnadi",
     venue: "ECIR", year: 2023, kind: "conference",
     areas: ["fairness", "privacy"],
-    featured: ["trustworthy"], note: "29% acceptance",
+    note: "29% acceptance",
     url: "https://www.springerprofessional.de/en/privacy-preserving-fair-item-ranking/24634466",
   },
   {
@@ -279,7 +283,7 @@ const PUBLICATIONS = [
     authors: "S. Pentyala, S. Sharma, S. Kariyappa, F. Leuce, D. Magazzeni",
     venue: "XAI-Finance @ ICAIF", year: 2023, kind: "workshop",
     areas: ["explain", "privacy"],
-    featured: ["trustworthy"],
+    featured: ["aiforgood"],
   },
   {
     title: "System and Method for Generating Recourse Paths with Privacy Guarantees",
@@ -307,7 +311,6 @@ const PUBLICATIONS = [
     authors: "S. Pentyala, N. Neophytou, A. Nascimento, M. De Cock, G. Farnadi",
     venue: "Montreal AI Symposium", year: 2022, kind: "workshop",
     areas: ["fairness", "privacy"],
-    featured: ["trustworthy"],
   },
   {
     title: "Training Differentially Private Models with Secure Multiparty Computation",
