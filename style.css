@@ -5,8 +5,8 @@
 
 :root {
   --ink:           #000000;
-  --muted:         #444444;
-  --subtle:        #767676;
+  --muted:         #1a1a1a;
+  --subtle:        #555555;
 
   --accent:        #2c5f8a;   /* blue   — primary */
   --accent-light:  #e8f0f7;
@@ -22,12 +22,12 @@
   --border:  #e4e4e4;
   --serif:   'Lora', Georgia, 'Times New Roman', serif;
   --sans:    'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --width:   780px;
+  --width:   920px;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { font-size: 16px; scroll-behavior: smooth; }
+html { font-size: 17px; scroll-behavior: smooth; }
 
 body {
   font-family: var(--sans);
@@ -107,7 +107,7 @@ p:last-child { margin-bottom: 0; }
   margin-bottom: 0.35rem;
 }
 .intro .role { color: var(--muted); font-size: 0.95rem; margin-bottom: 1rem; }
-.intro p { font-size: 0.97rem; }
+.intro p { font-size: 1rem; }
 
 .links { display: flex; flex-wrap: wrap; gap: 1.1rem; margin-top: 1.1rem; font-size: 0.89rem; }
 
@@ -157,7 +157,7 @@ p:last-child { margin-bottom: 0; }
 .news-list li {
   display: flex; gap: 1rem;
   padding: 0.22rem 0;
-  font-size: 0.92rem; align-items: baseline;
+  font-size: 0.95rem; align-items: baseline;
 }
 .news-date {
   flex: 0 0 5.4rem;
@@ -207,8 +207,8 @@ p:last-child { margin-bottom: 0; }
 .pub-title { font-size: 0.95rem; line-height: 1.4; }
 .pub-title a { color: var(--ink); }
 .pub-title a:hover { color: var(--accent); }
-.pub-authors { font-size: 0.865rem; color: var(--muted); }
-.pub-meta { font-size: 0.82rem; color: var(--subtle); }
+.pub-authors { font-size: 0.9rem; color: var(--muted); }
+.pub-meta { font-size: 0.86rem; color: var(--subtle); }
 
 .pub-venue { font-weight: 600; color: var(--muted); }
 
@@ -286,7 +286,7 @@ p:last-child { margin-bottom: 0; }
   margin-bottom: 0.15rem;
 }
 
-.note { font-size: 0.88rem; color: var(--muted); margin-top: 1.2rem; }
+.note { font-size: 0.91rem; color: var(--muted); margin-top: 1.2rem; }
 
 /* Publications page: pull the tabs up close to the intro line */
 .pubs-intro { margin-bottom: 1rem; }
@@ -317,7 +317,7 @@ p:last-child { margin-bottom: 0; }
 .card--green  h3 { color: var(--green); }
 .card--purple h3 { color: var(--purple); }
 
-.card p { font-size: 0.93rem; margin-bottom: 0.75rem; }
+.card p { font-size: 0.97rem; margin-bottom: 0.75rem; }
 .card p:last-of-type { margin-bottom: 0; }
 
 /* Collapsible research directions. The heading and question stay visible;
@@ -360,7 +360,7 @@ details.card[open] > summary { margin-bottom: 0.9rem; }
 }
 .rq-list { list-style: none; }
 .rq-list li {
-  font-size: 0.89rem; color: var(--muted);
+  font-size: 0.93rem; color: var(--muted);
   padding-left: 0.95rem; position: relative;
   margin-bottom: 0.06rem;
   line-height: 1.5;
@@ -379,8 +379,8 @@ details.card[open] > summary { margin-bottom: 0.9rem; }
 .list > li {
   position: relative;
   padding: 0.17rem 0 0.17rem 1.15rem;
-  font-size: 0.93rem;
-  line-height: 1.5;
+  font-size: 0.97rem;
+  line-height: 1.55;
 }
 .list > li::before {
   content: "▪";
@@ -402,7 +402,7 @@ details.card[open] > summary { margin-bottom: 0.9rem; }
 /* nested detail bullets */
 .list ul { list-style: none; margin-top: 0.05rem; }
 .list ul li {
-  font-size: 0.885rem; color: var(--muted);
+  font-size: 0.93rem; color: var(--muted);
   padding-left: 0.9rem; position: relative;
   margin-bottom: 0;
   line-height: 1.45;
