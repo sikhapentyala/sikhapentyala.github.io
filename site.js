@@ -122,8 +122,10 @@ function renderAllPubs() {
     .map((a, i) => `<button class="tab tab-${a.color || "grey"}${i === 0 ? " active" : ""}" data-area="${a.key}">${a.label}</button>`)
     .join("");
 
+  /* `hidden: true` keeps a paper off this page while still allowing it to
+     be featured on the research page via `featured`. */
   el.innerHTML = `<div class="tabs">${tabs}</div>` +
-                 pubUL([...PUBLICATIONS].sort(byYear));
+                 pubUL(PUBLICATIONS.filter(p => !p.hidden).sort(byYear));
 
   el.querySelectorAll(".tab").forEach(btn => {
     btn.addEventListener("click", () => {

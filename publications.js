@@ -41,6 +41,17 @@ const PUBLICATIONS = [
   /* ---------------------------- 2026 ---------------------------- */
 
   {
+    /* hidden: true  ->  featured under Privacy & Context on the research
+       page, but kept off the publications list. Delete that line to list it. */
+    title: "Who's Asking? Audience-Conditioned Privatization",
+    authors: "D. Filienko, A. Bagalkotkar, X. Vongsathorn, S. Pentyala",
+    venue: "arXiv", year: 2026, kind: "preprint",
+    areas: ["privacy"],
+    featured: ["context"], hidden: true,
+    url: "https://arxiv.org/abs/2611.08884",
+  },
+
+  {
     title: "Portable Causal Fairness Across Synthetic Data Generator Families",
     authors: "S. Golob,  S. Pentyala, M. De Cock,",
     venue: "AI4GOOD Workshop @ NeurIPS", year: 2026, kind: "workshop",

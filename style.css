@@ -320,6 +320,30 @@ p:last-child { margin-bottom: 0; }
 .card p { font-size: 0.93rem; margin-bottom: 0.75rem; }
 .card p:last-of-type { margin-bottom: 0; }
 
+/* Collapsible research directions. The heading and question stay visible;
+   the body expands on click. Add the `open` attribute to a <details> in
+   research.html to have that one expanded when the page loads. */
+details.card > summary {
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  padding-right: 1.6rem;
+}
+details.card > summary::-webkit-details-marker { display: none; }
+details.card > summary::after {
+  content: "\25B8";                 /* ▸ */
+  position: absolute;
+  right: 0.1rem;
+  top: 0.05rem;
+  font-size: 0.95rem;
+  color: var(--subtle);
+}
+details.card[open] > summary::after { content: "\25BE"; }   /* ▾ */
+details.card > summary:hover::after { color: var(--accent); }
+details.card > summary h3 { margin-bottom: 0.25rem; }
+details.card > summary .card-question { margin-bottom: 0; }
+details.card[open] > summary { margin-bottom: 0.9rem; }
+
 /* Thematic question under a direction heading: quiet, not a subheading */
 .card-question {
   font-size: 0.87rem;

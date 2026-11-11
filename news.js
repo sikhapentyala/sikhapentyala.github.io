@@ -9,6 +9,12 @@
    ============================================================ */
 
 const NEWS = [
+  { date: "Nov 2026",
+    text: "Our team won 1st place in Track 3 (Accelerating MPC-Based Deep Learning for Drug-Target Interaction Prediction) of the <a href=\"https://humangenomeprivacy.org/2026/competition-tasks.html\">iDASH 2026 Secure Genome Analysis Competition</a>." },
+
+  { date: "Nov 2026",
+    text: "<em>Membership Inference Attack on Private Evolution</em> accepted as an <strong>oral</strong> at the Beyond Private Training: The New Landscape of AI Privacy (InfPriv) workshop @ NeurIPS 2026." },
+
   { date: "Sep 2026",
     text: "1 main track paper and 2 workshop papers in NeurIPS 2026" },
 
